@@ -19,6 +19,8 @@ class ErrorInterceptor extends Interceptor {
             throw BadRequestException(err.requestOptions);
           case 401:
             throw UnauthorizedException(err.requestOptions);
+          case 402:
+            throw BadResponseException(err.requestOptions);
           case 404:
             throw NotFoundException(err.requestOptions);
           case 409:
@@ -87,6 +89,15 @@ class BadRequestException extends DioException {
   @override
   String toString() {
     return 'Invalid request';
+  }
+}
+
+class BadResponseException extends DioException {
+  BadResponseException(RequestOptions r) : super(requestOptions: r);
+
+  @override
+  String toString() {
+    return 'Bad response error';
   }
 }
 
