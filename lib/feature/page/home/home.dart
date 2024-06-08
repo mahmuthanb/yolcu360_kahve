@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:route_map/route_map.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
+import 'package:yolcu360_kahve/core/util/alert_message.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/page/home/home_vm.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_card.dart';
@@ -21,21 +20,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends BaseState<HomeViewModel, HomePage> {
   @override
   void initState() {
-    //viewModel.initStatusBarColor();
-    viewModel.getCoffeList();
+    viewModel.initStatusBarColor();
+    viewModel.getCoffeList(context);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarColor: AppColors.black,
-        statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.light,
-        systemNavigationBarColor: AppColors.grey,
-      ),
-    );
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SafeArea(
