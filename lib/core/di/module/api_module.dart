@@ -25,12 +25,6 @@ abstract class ApiModule {
         sendTimeout: const Duration(minutes: 1),
       ),
     );
-
-    // dio.interceptors.add(CertificatePinningInterceptor2(
-    //     allowedSHAFingerprints: [
-    //       getIt<AppConfig>().certificateFingerprintSHA256
-    //     ]));
-
     dio.interceptors.add(ErrorInterceptor());
     if (kDebugMode) {
       dio.interceptors.add(LoggerInterceptor());
