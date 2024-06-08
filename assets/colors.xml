@@ -1,0 +1,7 @@
+<resources>
+ <color name="primarySwatch">#FFC67C4E</color>
+ <color name="grey">#FFF7F7F7</color>
+ <color name="darkGrey">#FF686D76</color>
+ <color name="white">#FFFAF3E7</color>
+ <color name="black">#FF000000</color>
+</resources>
