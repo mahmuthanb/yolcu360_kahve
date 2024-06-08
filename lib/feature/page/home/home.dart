@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:route_map/route_map.dart';
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
-import 'package:yolcu360_kahve/core/util/alert_message.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/page/home/home_vm.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_card.dart';
@@ -20,13 +20,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends BaseState<HomeViewModel, HomePage> {
   @override
   void initState() {
-    viewModel.initStatusBarColor();
     viewModel.getCoffeList(context);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    viewModel.initStatusBarColor();
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SafeArea(
@@ -80,7 +80,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                         borderRadius: BorderRadius.circular(AppDimens.m),
                       ),
                       child: const ImageNetwork(
-                          imageUrl: "https://picsum.photos/200"),
+                          imageUrl: "https://picsum.photos/400"),
                     )
                   ],
                 ),
@@ -92,7 +92,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                 width: size.width,
                 child: Stack(
                   children: [
-                    const ImageNetwork(imageUrl: "https://picsum.photos/200"),
+                    const ImageNetwork(imageUrl: "https://picsum.photos/250"),
                     Container(
                       padding: const EdgeInsets.all(AppDimens.l),
                       child: const Column(
