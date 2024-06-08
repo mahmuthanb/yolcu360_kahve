@@ -4,6 +4,7 @@ import 'package:yolcu360_kahve/core/base/base_view_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
+import 'package:yolcu360_kahve/core/util/alert_message.dart';
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
 import 'package:yolcu360_kahve/feature/data/repository/app_repository.dart';
 
@@ -35,21 +36,25 @@ class HomeViewModel extends BaseViewModel {
   initStatusBarColor() {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.light,
         statusBarColor: AppColors.black,
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor: AppColors.grey,
       ),
     );
-    notifyListeners();
   }
 
   List<CoffeeModel> _coffeeList = [];
   List<CoffeeModel> get coffeeList => _coffeeList;
-  getCoffeList() async {
+  Future getCoffeList(BuildContext ctx) async {
     setIsLoading = true;
     return _appRepository.getCoffeeList().then((value) {
       if (value.isNotEmpty) {
         _coffeeList = value;
       }
+    }).onError((e, s) {
+      ctx.showSnackBar(e.toString(), status: AlertStatus.error);
+    }).whenComplete(() {
       setIsLoading = false;
       notifyListeners();
     });
