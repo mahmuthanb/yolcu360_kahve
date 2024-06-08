@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
 import 'package:yolcu360_kahve/core/util/formatter.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
+import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
 
 class CoffeCard extends StatelessWidget {
   const CoffeCard(
@@ -16,66 +16,70 @@ class CoffeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: ImageNetwork(imageUrl: data.image),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(AppDimens.s),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    data.title,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      height: 1.25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  if (data.ingredients.isNotEmpty)
+    return InkWell(
+      onTap: () =>
+          ProductDetailRoute(data: data).push(context, rootNavigator: true),
+      child: Card(
+        margin: EdgeInsets.zero,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: ImageNetwork(imageUrl: data.image),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(AppDimens.s),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     Text(
-                      'with ${data.ingredients.join(', ')}',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+                      data.title,
                       style: const TextStyle(
+                        fontSize: 20,
                         height: 1.25,
+                        fontWeight: FontWeight.bold,
                       ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                  const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    if (data.ingredients.isNotEmpty)
                       Text(
-                        data.price.currencyFormat(),
+                        'with ${data.ingredients.join(', ')}',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          height: 1.25,
                         ),
                       ),
-                      InkWell(
-                        onTap: () {},
-                        child: const Icon(
-                          Icons.add_box_rounded,
-                          color: AppColors.primarySwatch,
-                          size: 35,
+                    const Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          data.price.currencyFormat(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
                         ),
-                      ),
-                      // const SquareButton()
-                    ],
-                  )
-                ],
+                        InkWell(
+                          onTap: () {},
+                          child: const Icon(
+                            Icons.add_box_rounded,
+                            color: AppColors.primarySwatch,
+                            size: 35,
+                          ),
+                        ),
+                        // const SquareButton()
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

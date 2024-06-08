@@ -17,6 +17,9 @@ abstract class LocalDataSource {
 
   bool get isLogged;
   Future setLogged(bool logged);
+
+  String get favoritesList;
+  Future setFavorites(String? id);
 }
 
 @Environment(Environment.prod)
@@ -62,6 +65,14 @@ class LocalDataSourceImpl implements LocalDataSource {
   @override
   Future setLogged(bool logged) {
     return _getStorage.write("isLogged", logged);
+  }
+
+  @override
+  String get favoritesList => _getStorage.read<String>("favoritesList") ?? "";
+
+  @override
+  Future setFavorites(String? list) {
+    return _getStorage.write("favoritesList", list);
   }
 }
 
@@ -110,6 +121,16 @@ class TestLocalDataSourceImpl implements LocalDataSource {
   @override
   Future setLogged(bool logged) async {
     _isLogged = logged;
+    return;
+  }
+
+  String _favoritesList = "1,2,3,4,5,6,7,8,9";
+  @override
+  String get favoritesList => _favoritesList;
+
+  @override
+  Future setFavorites(String? favoritesList) async {
+    _favoritesList = favoritesList!;
     return;
   }
 }

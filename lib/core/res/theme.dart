@@ -116,4 +116,18 @@ class AppTheme {
     borderSide: const BorderSide(color: AppColors.grey),
     borderRadius: BorderRadius.circular(8),
   );
+
+  static var titleTextStyle = TextStyle(
+    fontSize: 18,
+    color: AppColors.black,
+    fontWeight: FontWeight.bold,
+  );
+
+  static var elevatedButtonStyle = ButtonStyle(
+    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+      RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+          side: BorderSide(color: Colors.red)),
+    ),
+  );
 }
