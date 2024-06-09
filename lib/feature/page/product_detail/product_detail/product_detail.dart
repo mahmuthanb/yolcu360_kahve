@@ -37,7 +37,6 @@ class _ProductDetailPageState
     return Scaffold(
       appBar: AppBar(
         title: Text('Detail of ${widget.data.title}'),
-        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () => viewModel.addToFavorites(widget.data.id),
@@ -164,6 +163,7 @@ class _ProductDetailPageState
             SizedBox(height: AppDimens.l),
             Text("Size", style: AppTheme.titleTextStyle),
             SizedBox(height: AppDimens.l),
+            // Size Widgets Section
             Container(
               height: size.height * .05,
               child: Row(
@@ -176,66 +176,71 @@ class _ProductDetailPageState
               ),
             ),
             Spacer(),
+
             Divider(
               color: AppColors.semiGrey,
               thickness: 2,
               height: AppDimens.l * 2,
             ),
-            Container(
-              height: size.height * .07,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Price",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: AppColors.darkGrey,
-                          ),
-                        ),
-                        Text(
-                          widget.data.price.currencyFormat(),
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: AppColors.primarySwatch,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Container(
-                      height: size.height * .06,
-                      child: ElevatedButton(
-                        onPressed: () => OrderDetailRoute().push(context),
-                        style: ButtonStyle(
-                          shape:
-                              WidgetStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                AppDimens.m,
-                              ),
-                            ),
-                          ),
-                        ),
-                        child: Text("BUY NOW"),
+          ],
+        ),
+      ),
+      bottomSheet: Container(
+        padding: EdgeInsets.all(AppDimens.l),
+        decoration: AppTheme.bottomSheetBoxDecoration,
+        child: Container(
+          height: size.height * .07,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Price",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.darkGrey,
                       ),
                     ),
-                  )
-                ],
+                    Text(
+                      widget.data.price.currencyFormat(),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: AppColors.primarySwatch,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
               ),
-            )
-          ],
+              Expanded(
+                flex: 3,
+                child: Container(
+                  height: size.height * .06,
+                  child: ElevatedButton(
+                    onPressed: () =>
+                        OrderDetailRoute(data: widget.data).push(context),
+                    style: ButtonStyle(
+                      shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            AppDimens.m,
+                          ),
+                        ),
+                      ),
+                    ),
+                    child: Text("BUY NOW"),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
