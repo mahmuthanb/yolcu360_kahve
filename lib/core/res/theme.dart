@@ -1,5 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
+import 'package:yolcu360_kahve/core/res/dimens.dart';
 import 'package:yolcu360_kahve/core/res/icons.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,7 @@ class AppTheme {
         // change to AppColors.grey
         scaffoldBackgroundColor: AppColors.grey,
         appBarTheme: const AppBarTheme(
-          centerTitle: false,
+          centerTitle: true,
           scrolledUnderElevation: 0,
         ),
         dividerTheme: DividerThemeData(
@@ -126,8 +127,27 @@ class AppTheme {
   static var elevatedButtonStyle = ButtonStyle(
     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
       RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-          side: BorderSide(color: Colors.red)),
+        borderRadius: BorderRadius.circular(18.0),
+        side: BorderSide(color: Colors.red),
+      ),
+    ),
+  );
+
+  static var customDivider = Divider(
+    color: AppColors.semiGrey,
+    thickness: 3,
+    height: AppDimens.l * 2,
+  );
+
+  static var bottomSheetBoxDecoration = BoxDecoration(
+    color: AppColors.grey,
+    borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(AppDimens.l),
+        topRight: Radius.circular(AppDimens.l)),
+    border: Border(
+      left: BorderSide(color: AppColors.semiGrey, width: 2),
+      right: BorderSide(color: AppColors.semiGrey, width: 2),
+      top: BorderSide(color: AppColors.semiGrey, width: 2),
     ),
   );
 }

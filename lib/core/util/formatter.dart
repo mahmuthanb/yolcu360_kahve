@@ -12,3 +12,10 @@ extension PriceFormatter on int {
     return '\$ $price';
   }
 }
+
+extension PriceFormatterDouble on double {
+  String currencyFormatDb() {
+    String price = toStringAsFixed(2);
+    return '\$ $price';
+  }
+}
