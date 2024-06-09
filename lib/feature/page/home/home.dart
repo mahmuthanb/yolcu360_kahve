@@ -37,7 +37,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               stops: [0.25, 0.25],
-              colors: [AppColors.black, AppColors.white],
+              colors: [AppColors.black, AppColors.grey],
             ),
           ),
           child: Column(
