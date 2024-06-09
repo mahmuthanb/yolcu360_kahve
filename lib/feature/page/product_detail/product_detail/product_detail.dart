@@ -10,6 +10,7 @@ import 'package:yolcu360_kahve/core/util/formatter.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
 import 'package:route_map/route_map.dart';
+import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
 import '/core/base/base_widget.dart';
 import './product_detail_vm.dart';
 
@@ -216,7 +217,7 @@ class _ProductDetailPageState
                     child: Container(
                       height: size.height * .06,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => OrderDetailRoute().push(context),
                         style: ButtonStyle(
                           shape:
                               WidgetStateProperty.all<RoundedRectangleBorder>(
