@@ -22,6 +22,12 @@ class OrderDetailPage extends StatefulWidget {
 class _OrderDetailPageState
     extends BaseState<OrderDetailViewModel, OrderDetailPage> {
   @override
+  void initState() {
+    viewModel.coffeeData = widget.data;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
     return Scaffold(
@@ -141,20 +147,24 @@ class _OrderDetailPageState
             AppTheme.customDivider,
             // Products Section
             Row(
+              mainAxisSize: MainAxisSize.max,
               children: [
                 Expanded(
-                  flex: 1,
-                  child: ImageNetwork(imageUrl: widget.data.image),
+                  child: Container(
+                    height: size.height * .075,
+                    child: ImageNetwork(imageUrl: viewModel.coffee.image),
+                  ),
                 ),
+                SizedBox(width: AppDimens.m),
                 Expanded(
                   flex: 2,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(widget.data.title),
-                      if (widget.data.ingredients.isNotEmpty)
+                      Text(viewModel.coffee.title),
+                      if (viewModel.coffee.ingredients.isNotEmpty)
                         Text(
-                          'with ${widget.data.ingredients.join(', ')}',
+                          'with ${viewModel.coffee.ingredients.join(', ')}',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -259,7 +269,7 @@ class _OrderDetailPageState
                         style: TextStyle(fontSize: 18),
                       ),
                       Text(
-                        widget.data.price.currencyFormat(),
+                        viewModel.coffee.price.currencyFormat(),
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
@@ -294,6 +304,7 @@ class _OrderDetailPageState
                 ],
               ),
             ),
+            // Divider
             AppTheme.customDivider,
             // Total Payment Section
             Container(

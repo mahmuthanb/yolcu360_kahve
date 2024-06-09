@@ -1,3 +1,5 @@
+import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
+
 import '/core/base/base_view_model.dart';
 import 'package:injectable/injectable.dart';
 
@@ -5,6 +7,20 @@ import 'package:injectable/injectable.dart';
 class OrderDetailViewModel extends BaseViewModel {
   OrderDetailViewModel();
   List<bool> isSelected = [true, false];
+
+  CoffeeModel _coffee = CoffeeModel(
+    title: "",
+    description: "",
+    ingredients: [""],
+    image: "",
+    id: 0,
+    price: 1,
+  );
+  CoffeeModel get coffee => _coffee;
+  set coffeeData(CoffeeModel data) {
+    _coffee = data;
+    notifyListeners();
+  }
 
   int _orderCount = 1;
   int get orderCount => _orderCount;
