@@ -38,7 +38,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              stops: [0.25, 0.25],
+              stops: [0.35, 0.35],
               colors: [AppColors.black, AppColors.grey],
             ),
           ),
@@ -96,36 +96,40 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                   color: AppColors.darkGrey.darken(.3),
                   borderRadius: BorderRadius.circular(AppDimens.m),
                 ),
-                child: Row(
-                  children: [
-                    IconButton(
-                      onPressed: () => SearchRoute().push(context),
-                      icon:
-                          Icon(Icons.search, size: 30, color: AppColors.white),
-                    ),
-                    Expanded(
-                      child: Text(
-                        context.l10n.lblHomeSearchBox,
-                        style: TextStyle(
-                            color: AppColors.semiGrey.darken(.3), fontSize: 20),
+                child: InkWell(
+                  onTap: () => SearchRoute().push(context),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () => SearchRoute().push(context),
+                        icon: Icon(Icons.search,
+                            size: 30, color: AppColors.white),
                       ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: AppColors.primarySwatch,
-                          borderRadius: BorderRadius.circular(AppDimens.s)),
-                      margin: EdgeInsets.all(AppDimens.xs),
-                      padding: EdgeInsets.all(AppDimens.s),
-                      child: InkWell(
-                        onTap: () {},
-                        child: const Icon(
-                          Icons.tune,
-                          color: AppColors.white,
-                          size: 20,
+                      Expanded(
+                        child: Text(
+                          context.l10n.lblHomeSearchBox,
+                          style: TextStyle(
+                              color: AppColors.semiGrey.darken(.3),
+                              fontSize: 20),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        decoration: BoxDecoration(
+                            color: AppColors.primarySwatch,
+                            borderRadius: BorderRadius.circular(AppDimens.s)),
+                        margin: EdgeInsets.all(AppDimens.xs),
+                        padding: EdgeInsets.all(AppDimens.s),
+                        child: InkWell(
+                          onTap: () {},
+                          child: const Icon(
+                            Icons.tune,
+                            color: AppColors.white,
+                            size: 20,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 // TextField(
                 //   onTap: () => SearchRoute().push(context),
