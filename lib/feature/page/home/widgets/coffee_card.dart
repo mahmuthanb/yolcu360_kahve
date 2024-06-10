@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
+import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
 import 'package:yolcu360_kahve/core/util/formatter.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
@@ -45,7 +46,9 @@ class CoffeCard extends StatelessWidget {
                     ),
                     if (data.ingredients.isNotEmpty)
                       Text(
-                        'with ${data.ingredients.join(', ')}',
+                        context.l10n.lblProductIngredients(
+                          data.ingredients.convertListtoString(),
+                        ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
