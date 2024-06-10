@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:route_map/route_map.dart';
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:yolcu360_kahve/core/res/colors.dart';
@@ -13,7 +12,6 @@ import 'package:yolcu360_kahve/feature/page/home/widgets/cofee_type_button.dart'
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_card.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_placeholders.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/slider_text.dart';
-import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
 
 @RouteMap(name: "home")
 class HomePage extends StatefulWidget {
