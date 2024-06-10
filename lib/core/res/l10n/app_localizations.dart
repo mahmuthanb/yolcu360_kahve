@@ -146,6 +146,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Version'**
   String get version;
+
+  /// No description provided for @lblPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get lblPrice;
+
+  /// No description provided for @lblBuyNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy Now'**
+  String get lblBuyNow;
+
+  /// No description provided for @lblReadMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Read More'**
+  String get lblReadMore;
+
+  /// No description provided for @lblReadLess.
+  ///
+  /// In en, this message translates to:
+  /// **'Read Less'**
+  String get lblReadLess;
+
+  /// No description provided for @lblDetailDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get lblDetailDescription;
+
+  /// No description provided for @lblDetailSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Size'**
+  String get lblDetailSize;
+
+  /// No description provided for @lblProductIngredients.
+  ///
+  /// In en, this message translates to:
+  /// **'with {desc}'**
+  String lblProductIngredients(Object desc);
+
+  /// No description provided for @ttlOrderPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Order'**
+  String get ttlOrderPage;
+
+  /// No description provided for @ttlDetailPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Detail'**
+  String get ttlDetailPage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

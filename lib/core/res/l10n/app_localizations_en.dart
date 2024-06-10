@@ -30,4 +30,33 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get version => 'Version';
+
+  @override
+  String get lblPrice => 'Price';
+
+  @override
+  String get lblBuyNow => 'Buy Now';
+
+  @override
+  String get lblReadMore => 'Read More';
+
+  @override
+  String get lblReadLess => 'Read Less';
+
+  @override
+  String get lblDetailDescription => 'Description';
+
+  @override
+  String get lblDetailSize => 'Size';
+
+  @override
+  String lblProductIngredients(Object desc) {
+    return 'with $desc';
+  }
+
+  @override
+  String get ttlOrderPage => 'Order';
+
+  @override
+  String get ttlDetailPage => 'Detail';
 }

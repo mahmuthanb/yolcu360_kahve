@@ -30,4 +30,33 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get version => 'Versiyon';
+
+  @override
+  String get lblPrice => 'Fiyat';
+
+  @override
+  String get lblBuyNow => 'Hemen Al';
+
+  @override
+  String get lblReadMore => 'Read More';
+
+  @override
+  String get lblReadLess => 'Read Less';
+
+  @override
+  String get lblDetailDescription => 'Description';
+
+  @override
+  String get lblDetailSize => 'Size';
+
+  @override
+  String lblProductIngredients(Object desc) {
+    return '$desc ile';
+  }
+
+  @override
+  String get ttlOrderPage => 'Sipariş';
+
+  @override
+  String get ttlDetailPage => 'Detay';
 }

@@ -2,17 +2,18 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yolcu360_kahve/core/res/assets.gen.dart';
-import 'package:yolcu360_kahve/core/res/colors.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
+import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
 import 'package:yolcu360_kahve/core/res/theme.dart';
 import 'package:yolcu360_kahve/core/util/formatter.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
 import 'package:route_map/route_map.dart';
+import 'package:yolcu360_kahve/feature/page/product_detail/widgets/size_widget.dart';
 import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
 import '/core/base/base_widget.dart';
-import './product_detail_vm.dart';
+import 'product_detail_vm.dart';
 
 @RouteMap()
 class ProductDetailPage extends StatefulWidget {
@@ -36,7 +37,7 @@ class _ProductDetailPageState
     final Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail of ${widget.data.title}'),
+        title: Text(context.l10n.ttlDetailPage),
         actions: [
           IconButton(
             onPressed: () => viewModel.addToFavorites(widget.data.id),
@@ -78,7 +79,8 @@ class _ProductDetailPageState
                         padding:
                             const EdgeInsets.symmetric(vertical: AppDimens.s),
                         child: Text(
-                          'with ${widget.data.ingredients.join(', ')}',
+                          context.l10n.lblProductIngredients(viewModel
+                              .prepareIngredientsText(widget.data.ingredients)),
                           style: const TextStyle(
                             height: 1.25,
                             fontSize: 16,
@@ -87,30 +89,20 @@ class _ProductDetailPageState
                           maxLines: 1,
                         ),
                       ),
-                      Text.rich(
-                        TextSpan(
-                          style: TextStyle(fontSize: 20),
-                          text: "4.8",
-                          children: [
-                            TextSpan(text: ' '),
-                            TextSpan(
-                              text: '(230)',
+                      Row(
+                        children: [
+                          SvgPicture.asset(AppAssets.images.star),
+                          SizedBox(width: AppDimens.xs),
+                          Text('4.8',
                               style: TextStyle(
-                                color: AppColors.darkGrey,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
+                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                          SizedBox(width: AppDimens.xs),
+                          Text('(230)', style: TextStyle(fontSize: 16))
+                        ],
+                      ),
                     ],
                   ),
                   Spacer(),
-                  // IconButton(
-                  //   onPressed: () {},
-                  //   icon: Icon(Icons.linked_camera),
-                  //   highlightColor: AppColors.darkGrey,
-                  // ),
                   SvgPicture.asset(
                     AppAssets.images.coffeebean,
                     width: 50,
@@ -129,7 +121,7 @@ class _ProductDetailPageState
               height: AppDimens.l * 2,
             ),
             Text(
-              "Description",
+              context.l10n.lblDetailDescription,
               style: AppTheme.titleTextStyle,
             ),
             SizedBox(height: AppDimens.l),
@@ -149,7 +141,9 @@ class _ProductDetailPageState
                     if (viewModel.flag) TextSpan(text: ".. "),
                     if (!viewModel.flag) TextSpan(text: viewModel.secondHalf),
                     TextSpan(
-                      text: viewModel.flag ? "Read More" : "Read Less",
+                      text: viewModel.flag
+                          ? context.l10n.lblReadMore
+                          : context.l10n.lblReadLess,
                       recognizer: TapGestureRecognizer()
                         ..onTap = () => viewModel.setFlag = !viewModel.flag,
                       style: TextStyle(
@@ -161,7 +155,8 @@ class _ProductDetailPageState
                 ),
               ),
             SizedBox(height: AppDimens.l),
-            Text("Size", style: AppTheme.titleTextStyle),
+            // Size Title
+            Text(context.l10n.lblDetailSize, style: AppTheme.titleTextStyle),
             SizedBox(height: AppDimens.l),
             // Size Widgets Section
             Container(
@@ -169,14 +164,25 @@ class _ProductDetailPageState
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  SizeWidget("S", false),
-                  SizeWidget("M", true),
-                  SizeWidget("L", false),
+                  SizeWidget(
+                    "S",
+                    viewModel.sizeActive[0],
+                    () => viewModel.changeSizeIndex(0),
+                  ),
+                  SizeWidget(
+                    "M",
+                    viewModel.sizeActive[1],
+                    () => viewModel.changeSizeIndex(1),
+                  ),
+                  SizeWidget(
+                    "L",
+                    viewModel.sizeActive[2],
+                    () => viewModel.changeSizeIndex(2),
+                  ),
                 ],
               ),
             ),
             Spacer(),
-
             Divider(
               color: AppColors.semiGrey,
               thickness: 2,
@@ -202,7 +208,7 @@ class _ProductDetailPageState
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Price",
+                      context.l10n.lblPrice,
                       style: TextStyle(
                         fontSize: 16,
                         color: AppColors.darkGrey,
@@ -235,49 +241,14 @@ class _ProductDetailPageState
                         ),
                       ),
                     ),
-                    child: Text("BUY NOW"),
+                    child: Text(
+                      context.l10n.lblBuyNow,
+                      style: TextStyle(fontSize: 20),
+                    ),
                   ),
                 ),
               )
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class SizeWidget extends StatelessWidget {
-  const SizeWidget(
-    this.text,
-    this.isActive, {
-    super.key,
-  });
-  final String text;
-  final bool isActive;
-  @override
-  Widget build(BuildContext context) {
-    final Size size = MediaQuery.sizeOf(context);
-    return Expanded(
-      child: Container(
-        height: size.height * .05,
-        decoration: BoxDecoration(
-          color: isActive
-              ? AppColors.primarySwatch.lighten(0.4)
-              : AppColors.semiGrey,
-          border: Border.all(
-            color: isActive ? AppColors.primarySwatch : AppColors.darkGrey,
-          ),
-          borderRadius: BorderRadius.circular(
-            AppDimens.m,
-          ),
-        ),
-        margin: EdgeInsets.only(right: AppDimens.m),
-        child: Center(
-          child: Text(
-            text,
-            style: AppTheme.titleTextStyle.copyWith(
-                color: isActive ? AppColors.primarySwatch : AppColors.darkGrey),
           ),
         ),
       ),

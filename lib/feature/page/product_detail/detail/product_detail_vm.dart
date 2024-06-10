@@ -76,4 +76,17 @@ class ProductDetailViewModel extends BaseViewModel {
     }
     notifyListeners();
   }
+
+  List<bool> _sizeActiveList = [false, true, false];
+  List<bool> get sizeActive => _sizeActiveList;
+  changeSizeIndex(int index) {
+    for (int i = 0; i < _sizeActiveList.length; i++) {
+      _sizeActiveList[i] = i == index ? true : false;
+    }
+    notifyListeners();
+  }
+
+  prepareIngredientsText(List<String> text) {
+    return text.join(', ');
+  }
 }

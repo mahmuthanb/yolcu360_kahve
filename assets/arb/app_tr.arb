@@ -8,5 +8,14 @@
   "light": "Parlak",
   "settings": "Ayarlar",
   "systemDefault": "Sistem Varsayılan",
-  "version": "Versiyon"
+  "version": "Versiyon",
+  "lblPrice":"Fiyat",
+  "lblBuyNow":"Hemen Al",
+  "lblReadMore":"Read More",
+  "lblReadLess":"Read Less",
+  "lblDetailDescription":"Description",
+  "lblDetailSize":"Size",
+  "lblProductIngredients":"{desc} ile",
+  "ttlOrderPage":"Sipariş",
+  "ttlDetailPage":"Detay"
 }

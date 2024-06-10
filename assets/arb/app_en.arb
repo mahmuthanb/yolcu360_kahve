@@ -8,5 +8,14 @@
   "light": "Light",
   "settings": "Settings",
   "systemDefault": "System Default",
-  "version": "Version"
+  "version": "Version",
+  "lblPrice":"Price",
+  "lblBuyNow":"Buy Now",
+  "lblReadMore":"Read More",
+  "lblReadLess":"Read Less",
+  "lblDetailDescription":"Description",
+  "lblDetailSize":"Size",
+  "lblProductIngredients":"with {desc}",
+  "ttlOrderPage":"Order",
+  "ttlDetailPage":"Detail"
 }
