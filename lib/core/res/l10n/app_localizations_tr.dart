@@ -38,16 +38,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get lblBuyNow => 'Hemen Al';
 
   @override
-  String get lblReadMore => 'Read More';
+  String get lblReadMore => 'Daha Fazla';
 
   @override
-  String get lblReadLess => 'Read Less';
+  String get lblReadLess => 'Daha Az';
 
   @override
-  String get lblDetailDescription => 'Description';
+  String get lblDetailDescription => 'Açıklama';
 
   @override
-  String get lblDetailSize => 'Size';
+  String get lblDetailSize => 'Boy';
 
   @override
   String lblProductIngredients(Object desc) {

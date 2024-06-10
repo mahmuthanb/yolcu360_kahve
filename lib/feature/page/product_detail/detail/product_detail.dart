@@ -43,9 +43,7 @@ class _ProductDetailPageState
             onPressed: () => viewModel.addToFavorites(widget.data.id),
             icon: viewModel.isFavorited
                 ? Icon(Icons.favorite)
-                : Icon(
-                    Icons.favorite_border,
-                  ),
+                : Icon(Icons.favorite_border),
           ),
         ],
       ),
