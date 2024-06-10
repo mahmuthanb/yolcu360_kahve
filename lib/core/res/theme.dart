@@ -118,7 +118,7 @@ class AppTheme {
     borderRadius: BorderRadius.circular(8),
   );
 
-  static var titleTextStyle = TextStyle(
+  static var titleTextStyle = const TextStyle(
     fontSize: 18,
     color: AppColors.black,
     fontWeight: FontWeight.bold,
@@ -132,13 +132,13 @@ class AppTheme {
     ),
   );
 
-  static var customDivider = Divider(
+  static var customDivider = const Divider(
     color: AppColors.semiGrey,
     thickness: 3,
     height: AppDimens.m * 2,
   );
 
-  static var bottomSheetBoxDecoration = BoxDecoration(
+  static var bottomSheetBoxDecoration = const BoxDecoration(
     color: AppColors.grey,
     borderRadius: BorderRadius.only(
         topLeft: Radius.circular(AppDimens.l),

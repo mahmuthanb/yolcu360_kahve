@@ -30,7 +30,7 @@ class SizeWidget extends StatelessWidget {
             AppDimens.m,
           ),
         ),
-        margin: EdgeInsets.only(right: AppDimens.m),
+        margin: const EdgeInsets.only(right: AppDimens.m),
         child: InkWell(
           onTap: onPressed,
           child: Center(

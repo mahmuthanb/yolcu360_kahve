@@ -9,7 +9,7 @@ class CustomSearchDelegate extends SearchDelegate<CoffeeModel> {
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
         onPressed: () {
           query = '';
           // When pressed here the query will be cleared from the search bar.
@@ -57,7 +57,8 @@ class CustomSearchDelegate extends SearchDelegate<CoffeeModel> {
 
     return ListView.separated(
       itemCount: suggestionList.length,
-      separatorBuilder: (context, index) => Divider(height: 2, thickness: 2),
+      separatorBuilder: (context, index) =>
+          const Divider(height: 2, thickness: 2),
       itemBuilder: (context, index) =>
           CoffeCardHorizontal(suggestionList[index]),
     );

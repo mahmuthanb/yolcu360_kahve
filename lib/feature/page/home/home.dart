@@ -56,18 +56,18 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                       children: [
                         Text(
                           context.l10n.lblHomeLocation,
-                          style: TextStyle(color: AppColors.white),
+                          style: const TextStyle(color: AppColors.white),
                         ),
                         Row(
                           children: [
                             Text(
                               viewModel.userLocation,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.white),
                             ),
-                            Icon(
+                            const Icon(
                               Icons.keyboard_arrow_down_rounded,
                               size: 30,
                               color: AppColors.white,
@@ -90,7 +90,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
               //Searchbar Section
               Container(
                 margin: const EdgeInsets.only(bottom: AppDimens.l),
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                     vertical: AppDimens.s, horizontal: AppDimens.s),
                 decoration: BoxDecoration(
                   color: AppColors.darkGrey.darken(.3),
@@ -104,7 +104,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                   ),
                   child: Row(
                     children: [
-                      IconButton(
+                      const IconButton(
                         onPressed: null,
                         icon: Icon(Icons.search,
                             size: 30, color: AppColors.white),
@@ -121,8 +121,8 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                         decoration: BoxDecoration(
                             color: AppColors.primarySwatch,
                             borderRadius: BorderRadius.circular(AppDimens.s)),
-                        margin: EdgeInsets.all(AppDimens.xs),
-                        padding: EdgeInsets.all(AppDimens.s),
+                        margin: const EdgeInsets.all(AppDimens.xs),
+                        padding: const EdgeInsets.all(AppDimens.s),
                         child: InkWell(
                           onTap: () {},
                           child: const Icon(

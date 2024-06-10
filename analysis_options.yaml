@@ -6,8 +6,8 @@ analyzer:
       lib/**.freezed.dart,
       lib/**.g.dart,
       lib/**.config.dart,
+      lib/**app_localizations**.dart,
       /**.routes.dart,
-      /**app_localizations**.dart,
     ]
 linter:
   rules:

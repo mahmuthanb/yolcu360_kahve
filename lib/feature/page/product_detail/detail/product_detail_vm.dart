@@ -1,6 +1,6 @@
 import 'package:yolcu360_kahve/core/source/local_data_source.dart';
 
-import '/core/base/base_view_model.dart';
+import 'package:yolcu360_kahve/core/base/base_view_model.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
@@ -10,7 +10,8 @@ class ProductDetailViewModel extends BaseViewModel {
 
   addToFavorites(int id) {
     String? lastFavList = "";
-    List<String> newList = favList.split(",").where((s) => !s.isEmpty).toList();
+    List<String> newList =
+        favList.split(",").where((s) => s.isNotEmpty).toList();
     if (!isFavorited) {
       newList.add(id.toString());
       // lastFavList = favList + '$id,';
@@ -77,7 +78,7 @@ class ProductDetailViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  List<bool> _sizeActiveList = [false, true, false];
+  final List<bool> _sizeActiveList = [false, true, false];
   List<bool> get sizeActive => _sizeActiveList;
   changeSizeIndex(int index) {
     for (int i = 0; i < _sizeActiveList.length; i++) {

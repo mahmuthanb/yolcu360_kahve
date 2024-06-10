@@ -20,24 +20,24 @@ class CoffeCardHorizontal extends StatelessWidget {
           ProductDetailRoute(data: data).push(context, rootNavigator: true),
       child: Container(
         color: AppColors.white,
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: AppDimens.l,
           vertical: AppDimens.s,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
                 height: 50,
                 width: 50,
                 child: ImageNetwork(imageUrl: data.image)),
-            SizedBox(width: AppDimens.m),
+            const SizedBox(width: AppDimens.m),
             Text(
               data.title,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            Spacer(),
-            Icon(
+            const Spacer(),
+            const Icon(
               Icons.keyboard_arrow_right_rounded,
               size: 30,
               color: AppColors.black,

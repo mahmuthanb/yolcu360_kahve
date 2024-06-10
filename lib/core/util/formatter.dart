@@ -22,6 +22,6 @@ extension PriceFormatterDouble on double {
 
 extension ListStringFormatter on List<String> {
   String convertListtoString() {
-    return this.join(', ');
+    return join(', ');
   }
 }

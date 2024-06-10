@@ -9,9 +9,9 @@ import 'package:yolcu360_kahve/core/util/formatter.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
 import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
-import '/core/base/base_widget.dart';
+import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:route_map/route_map.dart';
-import 'order_detail_vm.dart';
+import 'package:yolcu360_kahve/feature/page/order/detail/order_detail_vm.dart';
 
 @RouteMap()
 class OrderDetailPage extends StatefulWidget {
@@ -37,15 +37,15 @@ class _OrderDetailPageState
         title: Text(context.l10n.ttlOrderPage),
       ),
       body: Padding(
-        padding: EdgeInsets.all(AppDimens.l),
+        padding: const EdgeInsets.all(AppDimens.l),
         child: Column(
           children: [
             // Delivery Section
             Container(
               width: size.width,
               height: size.height * .05,
-              margin: EdgeInsets.only(bottom: AppDimens.l),
-              padding: EdgeInsets.all(AppDimens.xs),
+              margin: const EdgeInsets.only(bottom: AppDimens.l),
+              padding: const EdgeInsets.all(AppDimens.xs),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppDimens.m - 2),
                 color: AppColors.semiGrey,
@@ -58,19 +58,6 @@ class _OrderDetailPageState
                 fillColor: AppColors.primarySwatch,
                 borderWidth: 0,
                 borderRadius: BorderRadius.circular(AppDimens.s),
-                children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Text(
-                      'Deliver',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ),
-                  Container(
-                      child: Text('Pick Up', style: TextStyle(fontSize: 16)))
-                ],
                 onPressed: (int index) {
                   setState(() {
                     for (int i = 0; i < viewModel.isSelected.length; i++) {
@@ -79,6 +66,18 @@ class _OrderDetailPageState
                   });
                 },
                 isSelected: viewModel.isSelected,
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Text(
+                      'Deliver',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                  const Text('Pick Up', style: TextStyle(fontSize: 16))
+                ],
               ),
             ),
             Column(
@@ -86,34 +85,34 @@ class _OrderDetailPageState
               children: [
                 Text(
                   context.l10n.lblOrderDeliveryAdress,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
                 ),
-                SizedBox(height: AppDimens.m),
-                Text(
+                const SizedBox(height: AppDimens.m),
+                const Text(
                   "JI. Kpg Sutoyo",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
                 ),
-                SizedBox(height: AppDimens.m),
-                Text(
+                const SizedBox(height: AppDimens.m),
+                const Text(
                   "Kpg. Sutoyo No:620 Bilzen,Tanjungbalai",
                   style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
-                SizedBox(height: AppDimens.m),
+                const SizedBox(height: AppDimens.m),
                 Row(
                   children: [
                     ElevatedButton.icon(
                       onPressed: () {},
                       label: Text(
                         context.l10n.lblOrderEditAddress,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: AppColors.black,
                           fontWeight: FontWeight.normal,
                           fontSize: 16,
@@ -127,12 +126,12 @@ class _OrderDetailPageState
                             WidgetStateProperty.all(AppColors.white),
                       ),
                     ),
-                    SizedBox(width: AppDimens.m),
+                    const SizedBox(width: AppDimens.m),
                     ElevatedButton.icon(
                       onPressed: () {},
                       label: Text(
                         context.l10n.lblOrderAddNote,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: AppColors.black,
                           fontWeight: FontWeight.normal,
                           fontSize: 16,
@@ -156,12 +155,12 @@ class _OrderDetailPageState
               mainAxisSize: MainAxisSize.max,
               children: [
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     height: size.height * .075,
                     child: ImageNetwork(imageUrl: viewModel.coffee.image),
                   ),
                 ),
-                SizedBox(width: AppDimens.m),
+                const SizedBox(width: AppDimens.m),
                 Expanded(
                   flex: 2,
                   child: Column(
@@ -194,7 +193,7 @@ class _OrderDetailPageState
                       onPressed: viewModel.orderCount != 1
                           ? () => viewModel.setOrderCount = false
                           : null,
-                      icon: Icon(Icons.remove),
+                      icon: const Icon(Icons.remove),
                       padding: EdgeInsets.zero,
                       iconSize: 20,
                       color: AppColors.black,
@@ -205,7 +204,7 @@ class _OrderDetailPageState
                   padding: const EdgeInsets.symmetric(horizontal: AppDimens.m),
                   child: Text(
                     viewModel.orderCount.toString(),
-                    style: TextStyle(fontSize: 20),
+                    style: const TextStyle(fontSize: 20),
                   ),
                 ),
                 Container(
@@ -218,7 +217,7 @@ class _OrderDetailPageState
                     radius: 15,
                     child: IconButton(
                       onPressed: () => viewModel.setOrderCount = true,
-                      icon: Icon(Icons.add),
+                      icon: const Icon(Icons.add),
                       padding: EdgeInsets.zero,
                       iconSize: 20,
                       color: AppColors.black,
@@ -230,8 +229,8 @@ class _OrderDetailPageState
             AppTheme.customDivider,
             // Payment Summart && Discount Section
             Container(
-              padding: EdgeInsets.all(AppDimens.m),
-              margin: EdgeInsets.only(bottom: AppDimens.l),
+              padding: const EdgeInsets.all(AppDimens.m),
+              margin: const EdgeInsets.only(bottom: AppDimens.l),
               decoration: BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.circular(AppDimens.m),
@@ -243,13 +242,13 @@ class _OrderDetailPageState
                     AppAssets.images.percentage,
                     width: 25,
                   ),
-                  SizedBox(width: AppDimens.m),
+                  const SizedBox(width: AppDimens.m),
                   Text(
                     context.l10n.lblOrderPaymentDiscount(1),
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Spacer(),
-                  Icon(
+                  const Spacer(),
+                  const Icon(
                     Icons.keyboard_arrow_right_rounded,
                     size: 30,
                     color: AppColors.black,
@@ -257,117 +256,113 @@ class _OrderDetailPageState
                 ],
               ),
             ),
-            Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.l10n.lblOrderPaymentSummary,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.l10n.lblOrderPaymentSummary,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                const SizedBox(height: AppDimens.s),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      context.l10n.lblPrice,
+                      style: const TextStyle(fontSize: 18),
                     ),
-                  ),
-                  SizedBox(height: AppDimens.s),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        context.l10n.lblPrice,
-                        style: TextStyle(fontSize: 18),
+                    Text(
+                      viewModel.coffee.price.currencyFormat(),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
-                      Text(
-                        viewModel.coffee.price.currencyFormat(),
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: AppDimens.s),
+                Row(
+                  children: [
+                    Text(
+                      context.l10n.lblOrderPaymentDeliveryFee,
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    const Spacer(),
+                    Text(
+                      2.currencyFormat(),
+                      style: const TextStyle(
+                        fontSize: 16,
+                        decoration: TextDecoration.lineThrough,
                       ),
-                    ],
-                  ),
-                  SizedBox(height: AppDimens.s),
-                  Row(
-                    children: [
-                      Text(
-                        context.l10n.lblOrderPaymentDeliveryFee,
-                        style: TextStyle(fontSize: 18),
+                    ),
+                    const SizedBox(width: AppDimens.s),
+                    Text(
+                      1.currencyFormat(),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
-                      Spacer(),
-                      Text(
-                        2.currencyFormat(),
-                        style: TextStyle(
-                          fontSize: 16,
-                          decoration: TextDecoration.lineThrough,
-                        ),
-                      ),
-                      SizedBox(width: AppDimens.s),
-                      Text(
-                        1.currencyFormat(),
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             // Divider
             AppTheme.customDivider,
             // Total Payment Section
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Total Payment",
-                    style: TextStyle(fontSize: 18),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Total Payment",
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  (5.53).currencyFormatDb(),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
                   ),
-                  Text(
-                    (5.53).currencyFormatDb(),
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
       ),
       bottomSheet: Container(
-        padding: EdgeInsets.all(AppDimens.l),
+        padding: const EdgeInsets.all(AppDimens.l),
         decoration: AppTheme.bottomSheetBoxDecoration,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              padding: EdgeInsets.only(bottom: AppDimens.l),
+              padding: const EdgeInsets.only(bottom: AppDimens.l),
               child: Row(
                 children: [
                   SvgPicture.asset(AppAssets.images.cash, width: 30),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: AppDimens.m),
+                    margin: const EdgeInsets.symmetric(horizontal: AppDimens.m),
                     padding: const EdgeInsets.all(AppDimens.s),
                     decoration: BoxDecoration(
                       color: AppColors.primarySwatch,
                       borderRadius: BorderRadius.circular(AppDimens.l),
                     ),
-                    child: Text(
+                    child: const Text(
                       "Cash",
                       style: TextStyle(color: AppColors.white),
                     ),
                   ),
                   Text(
                     (5.53).currencyFormatDb(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),
-                  Spacer(),
-                  Container(
+                  const Spacer(),
+                  SizedBox(
                     width: 25,
                     height: 25,
                     child: IconButton(
@@ -381,19 +376,19 @@ class _OrderDetailPageState
                           AppColors.white,
                         ),
                       ),
-                      icon: Icon(Icons.more_horiz),
+                      icon: const Icon(Icons.more_horiz),
                     ),
                   )
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               width: size.width,
               height: size.height * .06,
               child: ElevatedButton(
                 onPressed: () => OrderStatusRoute().push(context),
                 style: AppTheme.elevatedButtonStyle,
-                child: Text("Order", style: TextStyle(fontSize: 20)),
+                child: const Text("Order", style: TextStyle(fontSize: 20)),
               ),
             ),
           ],
