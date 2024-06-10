@@ -8,6 +8,8 @@ import 'package:yolcu360_kahve/core/res/theme.dart';
 import 'package:yolcu360_kahve/core/util/formatter.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
+import 'package:yolcu360_kahve/feature/page/order/status/order_status/order_status.dart';
+import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
 import '/core/base/base_widget.dart';
 import 'package:route_map/route_map.dart';
 import './order_detail_vm.dart';
@@ -390,7 +392,7 @@ class _OrderDetailPageState
               width: size.width,
               height: size.height * .06,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => OrderStatusRoute().push(context),
                 style: AppTheme.elevatedButtonStyle,
                 child: Text("Order", style: TextStyle(fontSize: 20)),
               ),
