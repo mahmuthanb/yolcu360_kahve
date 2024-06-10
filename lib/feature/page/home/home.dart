@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:route_map/route_map.dart';
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:yolcu360_kahve/core/res/colors.dart';
@@ -7,6 +8,7 @@ import 'package:yolcu360_kahve/core/res/dimens.dart';
 import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/page/home/home_vm.dart';
+import 'package:yolcu360_kahve/feature/page/home/widgets/cofee_type_button.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_card.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_placeholders.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/slider_text.dart';
@@ -60,7 +62,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                         Row(
                           children: [
                             Text(
-                              "Bilzen,Tanjungbalai",
+                              viewModel.userLocation,
                               style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -81,8 +83,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(AppDimens.m),
                       ),
-                      child: const ImageNetwork(
-                          imageUrl: "https://picsum.photos/400"),
+                      child: ImageNetwork(imageUrl: viewModel.userPhotoUrl),
                     )
                   ],
                 ),
@@ -131,37 +132,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                     ],
                   ),
                 ),
-                // TextField(
-                //   onTap: () => SearchRoute().push(context),
-                //   decoration: InputDecoration(
-                //     labelText: 'Search coffee',
-                //     labelStyle: TextStyle(color: AppColors.semiGrey.darken(.3)),
-                //     border: OutlineInputBorder(),
-                //     fillColor: AppColors.darkGrey.darken(.3),
-                //     enabledBorder: OutlineInputBorder(
-                //       borderRadius: new BorderRadius.circular(AppDimens.m),
-                //     ),
-                //     prefixIcon: Icon(Icons.search, size: 30),
-                //     suffixIcon: Container(
-                //       decoration: BoxDecoration(
-                //           color: AppColors.primarySwatch,
-                //           borderRadius: BorderRadius.circular(AppDimens.s)),
-                //       margin: EdgeInsets.all(8),
-                //       child: InkWell(
-                //         onTap: () {},
-                //         child: const Icon(
-                //           Icons.tune,
-                //           color: AppColors.white,
-                //           size: 25,
-                //         ),
-                //       ),
-                //     ),
-                //     suffixIconColor: AppColors.white,
-                //     prefixIconColor: AppColors.white,
-                //   ),
-                // ),
               ),
-
               //Slider Section
               Container(
                 margin: const EdgeInsets.only(bottom: AppDimens.l),
@@ -169,7 +140,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                 width: size.width,
                 child: Stack(
                   children: [
-                    const ImageNetwork(imageUrl: "https://picsum.photos/250"),
+                    ImageNetwork(imageUrl: viewModel.sliderPhotoUrl),
                     Container(
                       padding: const EdgeInsets.all(AppDimens.l),
                       child: const Column(
@@ -202,23 +173,15 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                     separatorBuilder: (context, index) =>
                         const SizedBox(width: AppDimens.s),
                     itemCount: viewModel.coffeeTypes.length,
-                    itemBuilder: (context, index) => Wrap(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(AppDimens.s),
-                          decoration: BoxDecoration(
-                              color: AppColors.primarySwatch,
-                              borderRadius: BorderRadius.circular(AppDimens.s)),
-                          child: Text(
-                            viewModel.coffeeTypes[index],
-                            style: const TextStyle(
-                                color: AppColors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                    ),
+                    itemBuilder: (context, index) {
+                      bool isSelected = index == viewModel.actCofCat;
+                      String data = viewModel.coffeeTypes[index];
+                      return CoffeeTypeButton(
+                        data,
+                        () => viewModel.activeCoffeCat(index),
+                        isSelected: isSelected,
+                      );
+                    },
                   ),
                 ),
               ),

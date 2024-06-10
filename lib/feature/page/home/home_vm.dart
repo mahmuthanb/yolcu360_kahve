@@ -20,6 +20,16 @@ class HomeViewModel extends BaseViewModel {
     "Americano",
     "Fresh Filter"
   ];
+  var userPhotoUrl = "https://picsum.photos/400";
+  var userLocation = "Bilzen,Tanjungbalai";
+  var sliderPhotoUrl = "https://picsum.photos/250";
+
+  int _actCofCat = 0;
+  int get actCofCat => _actCofCat;
+  activeCoffeCat(int index) {
+    _actCofCat = index;
+    notifyListeners();
+  }
 
   final sliverGridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
