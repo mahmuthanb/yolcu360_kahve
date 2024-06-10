@@ -8,11 +8,11 @@ import 'package:yolcu360_kahve/core/res/theme.dart';
 import 'package:yolcu360_kahve/core/util/formatter.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
-import 'package:yolcu360_kahve/feature/page/order/status/order_status/order_status.dart';
+import 'package:yolcu360_kahve/feature/page/order/status/order_status.dart';
 import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
 import '/core/base/base_widget.dart';
 import 'package:route_map/route_map.dart';
-import './order_detail_vm.dart';
+import 'order_detail_vm.dart';
 
 @RouteMap()
 class OrderDetailPage extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '/core/base/base_widget.dart';
 import 'package:route_map/route_map.dart';
-import './order_status_vm.dart';
+import 'order_status_vm.dart';
 
 @RouteMap()
 class OrderStatusPage extends StatefulWidget {
