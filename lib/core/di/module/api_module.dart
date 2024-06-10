@@ -37,6 +37,7 @@ abstract class ApiModule {
   AppService get appService => AppService(injectRetrofitAPI);
 
   @Environment(Environment.dev)
+  @Environment(Environment.test)
   @lazySingleton
   AppService get appServiceMock => MockAppService();
 }

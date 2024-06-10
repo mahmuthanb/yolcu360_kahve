@@ -6,15 +6,16 @@ class MockAppService implements AppService {
   MockAppService();
 
   @override
-  Future<String> getAppVersion() {
-    // TODO: implement getAppVersion
-    throw UnimplementedError();
+  Future<String> getAppVersion() async {
+    String version = '1.1';
+    await Future.delayed(Duration(seconds: 1));
+    return version;
   }
 
   @override
   Future<List<CoffeeModel>> getCoffeeList() async {
     List<CoffeeModel> data = [];
-    await Future.delayed(Duration(seconds: 5)).then((v) async {
+    await Future.delayed(Duration(seconds: 3)).then((v) async {
       dummyData.forEach((e) {
         data.add(CoffeeModel.fromJson(e));
       });

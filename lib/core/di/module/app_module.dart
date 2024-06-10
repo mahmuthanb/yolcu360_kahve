@@ -23,4 +23,15 @@ abstract class AppModule {
   @Environment(Environment.dev)
   @Environment(Environment.prod)
   Connectivity get connectivity => Connectivity();
+
+  @Environment(Environment.test)
+  PackageInfo test() => PackageInfo(
+        appName: "appName",
+        packageName: "packageName",
+        version: "version",
+        buildNumber: "buildNumber",
+      );
+
+  @Environment(Environment.test)
+  Connectivity get connectivityTest => Connectivity();
 }
