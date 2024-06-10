@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:yolcu360_kahve/core/res/assets.gen.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
+import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
 import 'package:yolcu360_kahve/core/res/theme.dart';
 import 'package:yolcu360_kahve/core/util/formatter.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
@@ -164,7 +165,9 @@ class _OrderDetailPageState
                       Text(viewModel.coffee.title),
                       if (viewModel.coffee.ingredients.isNotEmpty)
                         Text(
-                          'with ${viewModel.coffee.ingredients.join(', ')}',
+                          context.l10n.lblProductIngredients(viewModel
+                              .coffee.ingredients
+                              .convertListtoString()),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -237,7 +240,7 @@ class _OrderDetailPageState
                   ),
                   SizedBox(width: AppDimens.m),
                   Text(
-                    "1 Discount is applied",
+                    context.l10n.lblOrderPaymentDiscount(1),
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
@@ -254,7 +257,7 @@ class _OrderDetailPageState
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Payment Summary",
+                    context.l10n.lblOrderPaymentSummary,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -265,7 +268,7 @@ class _OrderDetailPageState
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Price",
+                        context.l10n.lblPrice,
                         style: TextStyle(fontSize: 18),
                       ),
                       Text(
@@ -281,7 +284,7 @@ class _OrderDetailPageState
                   Row(
                     children: [
                       Text(
-                        "Delivery Fee",
+                        context.l10n.lblOrderPaymentDeliveryFee,
                         style: TextStyle(fontSize: 18),
                       ),
                       Spacer(),

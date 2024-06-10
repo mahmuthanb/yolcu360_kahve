@@ -16,6 +16,10 @@
   "lblDetailDescription":"Description",
   "lblDetailSize":"Size",
   "lblProductIngredients":"with {desc}",
+  "lblOrderDeliveryAdress":"Delivery Address",
+  "lblOrderPaymentSummary":"Payment Summary",
+  "lblOrderPaymentDeliveryFee":"Delivery Fee",
+  "lblOrderPaymentDiscount":"{count} Discount is applied",
   "ttlOrderPage":"Order",
   "ttlDetailPage":"Detail"
 }

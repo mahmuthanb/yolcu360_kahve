@@ -85,8 +85,4 @@ class ProductDetailViewModel extends BaseViewModel {
     }
     notifyListeners();
   }
-
-  prepareIngredientsText(List<String> text) {
-    return text.join(', ');
-  }
 }

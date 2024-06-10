@@ -55,6 +55,20 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get lblOrderDeliveryAdress => 'Gönderim Adresi';
+
+  @override
+  String get lblOrderPaymentSummary => 'Sipariş Özeti';
+
+  @override
+  String get lblOrderPaymentDeliveryFee => 'Teslimat Bedeli';
+
+  @override
+  String lblOrderPaymentDiscount(Object count) {
+    return '$count adet İndirim uygulandı';
+  }
+
+  @override
   String get ttlOrderPage => 'Sipariş';
 
   @override

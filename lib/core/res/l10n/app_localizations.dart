@@ -189,6 +189,30 @@ abstract class AppLocalizations {
   /// **'with {desc}'**
   String lblProductIngredients(Object desc);
 
+  /// No description provided for @lblOrderDeliveryAdress.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Address'**
+  String get lblOrderDeliveryAdress;
+
+  /// No description provided for @lblOrderPaymentSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Summary'**
+  String get lblOrderPaymentSummary;
+
+  /// No description provided for @lblOrderPaymentDeliveryFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Fee'**
+  String get lblOrderPaymentDeliveryFee;
+
+  /// No description provided for @lblOrderPaymentDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Discount is applied'**
+  String lblOrderPaymentDiscount(Object count);
+
   /// No description provided for @ttlOrderPage.
   ///
   /// In en, this message translates to:

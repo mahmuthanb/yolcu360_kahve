@@ -77,8 +77,8 @@ class _ProductDetailPageState
                         padding:
                             const EdgeInsets.symmetric(vertical: AppDimens.s),
                         child: Text(
-                          context.l10n.lblProductIngredients(viewModel
-                              .prepareIngredientsText(widget.data.ingredients)),
+                          context.l10n.lblProductIngredients(
+                              widget.data.ingredients.convertListtoString()),
                           style: const TextStyle(
                             height: 1.25,
                             fontSize: 16,

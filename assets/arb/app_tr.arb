@@ -16,6 +16,10 @@
   "lblDetailDescription":"Açıklama",
   "lblDetailSize":"Boy",
   "lblProductIngredients":"{desc} ile",
+  "lblOrderDeliveryAdress":"Gönderim Adresi",
+  "lblOrderPaymentSummary":"Sipariş Özeti",
+  "lblOrderPaymentDeliveryFee":"Teslimat Bedeli",
+  "lblOrderPaymentDiscount":"{count} adet İndirim uygulandı",
   "ttlOrderPage":"Sipariş",
   "ttlDetailPage":"Detay"
 }

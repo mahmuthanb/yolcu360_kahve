@@ -55,6 +55,20 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get lblOrderDeliveryAdress => 'Delivery Address';
+
+  @override
+  String get lblOrderPaymentSummary => 'Payment Summary';
+
+  @override
+  String get lblOrderPaymentDeliveryFee => 'Delivery Fee';
+
+  @override
+  String lblOrderPaymentDiscount(Object count) {
+    return '$count Discount is applied';
+  }
+
+  @override
   String get ttlOrderPage => 'Order';
 
   @override
