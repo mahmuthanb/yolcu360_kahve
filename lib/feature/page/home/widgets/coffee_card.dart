@@ -26,7 +26,10 @@ class CoffeCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: ImageNetwork(imageUrl: data.image),
+              child: Padding(
+                padding: const EdgeInsets.all(AppDimens.s),
+                child: ImageNetwork(imageUrl: data.image),
+              ),
             ),
             Expanded(
               child: Padding(
