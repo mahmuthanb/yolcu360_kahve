@@ -107,7 +107,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () => SearchRoute().push(context),
+                        onPressed: null,
                         icon: Icon(Icons.search,
                             size: 30, color: AppColors.white),
                       ),
