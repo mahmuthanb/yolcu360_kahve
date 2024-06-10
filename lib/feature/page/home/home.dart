@@ -5,6 +5,7 @@ import 'package:yolcu360_kahve/core/res/colors.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
 import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
+import 'package:yolcu360_kahve/core/res/theme.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/page/home/home_vm.dart';
 import 'package:yolcu360_kahve/feature/page/home/search/search_delegate.dart';
@@ -35,14 +36,7 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: AppDimens.l),
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.35, 0.35],
-              colors: [AppColors.black, AppColors.grey],
-            ),
-          ),
+          decoration: AppTheme.gradientScaffoldBg,
           child: Column(
             children: [
               //Header Section

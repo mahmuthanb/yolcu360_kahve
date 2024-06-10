@@ -53,6 +53,7 @@ class HomeViewModel extends BaseViewModel {
         systemNavigationBarColor: AppColors.grey,
       ),
     );
+    notifyListeners();
   }
 
   List<CoffeeModel> _coffeeList = [];
