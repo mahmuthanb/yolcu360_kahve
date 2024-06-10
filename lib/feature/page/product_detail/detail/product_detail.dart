@@ -230,15 +230,7 @@ class _ProductDetailPageState
                   child: ElevatedButton(
                     onPressed: () =>
                         OrderDetailRoute(data: widget.data).push(context),
-                    style: ButtonStyle(
-                      shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                            AppDimens.m,
-                          ),
-                        ),
-                      ),
-                    ),
+                    style: AppTheme.elevatedButtonStyle,
                     child: Text(
                       context.l10n.lblBuyNow,
                       style: TextStyle(fontSize: 20),

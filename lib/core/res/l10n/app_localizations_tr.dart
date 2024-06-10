@@ -69,6 +69,18 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get lblOrderEditAddress => 'Adresi Düzenle';
+
+  @override
+  String get lblOrderAddNote => 'Not Ekle';
+
+  @override
+  String get lblHomeLocation => 'Konum';
+
+  @override
+  String get lblHomeSearchBox => 'Kahve ara';
+
+  @override
   String get ttlOrderPage => 'Sipariş';
 
   @override

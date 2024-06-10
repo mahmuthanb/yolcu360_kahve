@@ -213,6 +213,30 @@ abstract class AppLocalizations {
   /// **'{count} Discount is applied'**
   String lblOrderPaymentDiscount(Object count);
 
+  /// No description provided for @lblOrderEditAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Address'**
+  String get lblOrderEditAddress;
+
+  /// No description provided for @lblOrderAddNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Note'**
+  String get lblOrderAddNote;
+
+  /// No description provided for @lblHomeLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get lblHomeLocation;
+
+  /// No description provided for @lblHomeSearchBox.
+  ///
+  /// In en, this message translates to:
+  /// **'Search coffee'**
+  String get lblHomeSearchBox;
+
   /// No description provided for @ttlOrderPage.
   ///
   /// In en, this message translates to:

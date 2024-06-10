@@ -17,7 +17,8 @@ class HomeViewModel extends BaseViewModel {
     "Cappucino",
     "Machiato",
     "Latte",
-    "Americano"
+    "Americano",
+    "Fresh Filter"
   ];
 
   final sliverGridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(

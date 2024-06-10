@@ -127,8 +127,7 @@ class AppTheme {
   static var elevatedButtonStyle = ButtonStyle(
     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
       RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(color: Colors.red),
+        borderRadius: BorderRadius.circular(AppDimens.m),
       ),
     ),
   );
@@ -136,7 +135,7 @@ class AppTheme {
   static var customDivider = Divider(
     color: AppColors.semiGrey,
     thickness: 3,
-    height: AppDimens.l * 2,
+    height: AppDimens.m * 2,
   );
 
   static var bottomSheetBoxDecoration = BoxDecoration(

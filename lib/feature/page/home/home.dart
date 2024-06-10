@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:route_map/route_map.dart';
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
+import 'package:yolcu360_kahve/core/res/colors.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
+import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/page/home/home_vm.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_card.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_placeholders.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/slider_text.dart';
+import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
 
 @RouteMap(name: "home")
 class HomePage extends StatefulWidget {
@@ -47,11 +50,11 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Location",
+                          context.l10n.lblHomeLocation,
                           style: TextStyle(color: AppColors.white),
                         ),
                         Row(
@@ -84,6 +87,77 @@ class _HomePageState extends BaseState<HomeViewModel, HomePage> {
                   ],
                 ),
               ),
+              //Searchbar Section
+              Container(
+                margin: const EdgeInsets.only(bottom: AppDimens.l),
+                padding: EdgeInsets.symmetric(
+                    vertical: AppDimens.s, horizontal: AppDimens.s),
+                decoration: BoxDecoration(
+                  color: AppColors.darkGrey.darken(.3),
+                  borderRadius: BorderRadius.circular(AppDimens.m),
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () => SearchRoute().push(context),
+                      icon:
+                          Icon(Icons.search, size: 30, color: AppColors.white),
+                    ),
+                    Expanded(
+                      child: Text(
+                        context.l10n.lblHomeSearchBox,
+                        style: TextStyle(
+                            color: AppColors.semiGrey.darken(.3), fontSize: 20),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: AppColors.primarySwatch,
+                          borderRadius: BorderRadius.circular(AppDimens.s)),
+                      margin: EdgeInsets.all(AppDimens.xs),
+                      padding: EdgeInsets.all(AppDimens.s),
+                      child: InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.tune,
+                          color: AppColors.white,
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                // TextField(
+                //   onTap: () => SearchRoute().push(context),
+                //   decoration: InputDecoration(
+                //     labelText: 'Search coffee',
+                //     labelStyle: TextStyle(color: AppColors.semiGrey.darken(.3)),
+                //     border: OutlineInputBorder(),
+                //     fillColor: AppColors.darkGrey.darken(.3),
+                //     enabledBorder: OutlineInputBorder(
+                //       borderRadius: new BorderRadius.circular(AppDimens.m),
+                //     ),
+                //     prefixIcon: Icon(Icons.search, size: 30),
+                //     suffixIcon: Container(
+                //       decoration: BoxDecoration(
+                //           color: AppColors.primarySwatch,
+                //           borderRadius: BorderRadius.circular(AppDimens.s)),
+                //       margin: EdgeInsets.all(8),
+                //       child: InkWell(
+                //         onTap: () {},
+                //         child: const Icon(
+                //           Icons.tune,
+                //           color: AppColors.white,
+                //           size: 25,
+                //         ),
+                //       ),
+                //     ),
+                //     suffixIconColor: AppColors.white,
+                //     prefixIconColor: AppColors.white,
+                //   ),
+                // ),
+              ),
+
               //Slider Section
               Container(
                 margin: const EdgeInsets.only(bottom: AppDimens.l),

@@ -19,7 +19,11 @@
   "lblOrderDeliveryAdress":"Delivery Address",
   "lblOrderPaymentSummary":"Payment Summary",
   "lblOrderPaymentDeliveryFee":"Delivery Fee",
-  "lblOrderPaymentDiscount":"{count} Discount is applied",
+  "lblOrderPaymentDiscount":"{count} Discount is applied",  
+  "lblOrderEditAddress":"Edit Address",
+  "lblOrderAddNote":"Add Note",
+  "lblHomeLocation":"Location",
+  "lblHomeSearchBox":"Search coffee",
   "ttlOrderPage":"Order",
   "ttlDetailPage":"Detail"
 }

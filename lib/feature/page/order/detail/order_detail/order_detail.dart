@@ -33,7 +33,7 @@ class _OrderDetailPageState
     final Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Order'),
+        title: Text(context.l10n.ttlOrderPage),
       ),
       body: Padding(
         padding: EdgeInsets.all(AppDimens.l),
@@ -42,25 +42,32 @@ class _OrderDetailPageState
             // Delivery Section
             Container(
               width: size.width,
-              height: size.height * .075,
+              height: size.height * .05,
               margin: EdgeInsets.only(bottom: AppDimens.l),
+              padding: EdgeInsets.all(AppDimens.xs),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppDimens.m),
-                color: AppColors.darkGrey,
+                borderRadius: BorderRadius.circular(AppDimens.m - 2),
+                color: AppColors.semiGrey,
               ),
               child: ToggleButtons(
-                fillColor: AppColors.primarySwatch,
+                constraints:
+                    BoxConstraints.expand(width: (size.width - 56) / 2),
+                color: AppColors.darkGrey,
                 selectedColor: AppColors.white,
-                // borderWidth: 10,
-                borderRadius: BorderRadius.circular(AppDimens.m),
+                fillColor: AppColors.primarySwatch,
+                borderWidth: 0,
+                borderRadius: BorderRadius.circular(AppDimens.s),
                 children: <Widget>[
                   Container(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Deliver',
-                          style:
-                              TextStyle(fontSize: 16, color: AppColors.white))),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      'Deliver',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
                   Container(
-                      padding: const EdgeInsets.all(8.0),
                       child: Text('Pick Up', style: TextStyle(fontSize: 16)))
                 ],
                 onPressed: (int index) {
@@ -73,77 +80,74 @@ class _OrderDetailPageState
                 isSelected: viewModel.isSelected,
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(bottom: AppDimens.l),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Delivery Address",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.l10n.lblOrderDeliveryAdress,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
-                  SizedBox(height: AppDimens.m),
-                  Text(
-                    "JI. Kpg Sutoyo",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                ),
+                SizedBox(height: AppDimens.m),
+                Text(
+                  "JI. Kpg Sutoyo",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
                   ),
-                  SizedBox(height: AppDimens.m),
-                  Text(
-                    "Kpg. Sutoyo No:620 Bilzen,Tanjungbalai",
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
+                ),
+                SizedBox(height: AppDimens.m),
+                Text(
+                  "Kpg. Sutoyo No:620 Bilzen,Tanjungbalai",
+                  style: TextStyle(
+                    fontSize: 16,
                   ),
-                  SizedBox(height: AppDimens.m),
-                  Row(
-                    children: [
-                      ElevatedButton.icon(
-                        onPressed: () {},
-                        label: Text(
-                          'Edit Adress',
-                          style: TextStyle(
-                            color: AppColors.black,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 16,
-                          ),
-                        ),
-                        icon: SvgPicture.asset(AppAssets.images.editAddress,
-                            width: 15),
-                        style: ButtonStyle(
-                          elevation: WidgetStateProperty.all(0),
-                          backgroundColor:
-                              WidgetStateProperty.all(AppColors.white),
+                ),
+                SizedBox(height: AppDimens.m),
+                Row(
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: () {},
+                      label: Text(
+                        context.l10n.lblOrderEditAddress,
+                        style: TextStyle(
+                          color: AppColors.black,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 16,
                         ),
                       ),
-                      SizedBox(width: AppDimens.m),
-                      ElevatedButton.icon(
-                        onPressed: () {},
-                        label: Text(
-                          'Add Note',
-                          style: TextStyle(
-                            color: AppColors.black,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 16,
-                          ),
-                        ),
-                        icon: SvgPicture.asset(AppAssets.images.addnote,
-                            width: 15),
-                        style: ButtonStyle(
-                          elevation: WidgetStateProperty.all(0),
-                          backgroundColor:
-                              WidgetStateProperty.all(AppColors.white),
+                      icon: SvgPicture.asset(AppAssets.images.editAddress,
+                          width: 15),
+                      style: ButtonStyle(
+                        elevation: WidgetStateProperty.all(0),
+                        backgroundColor:
+                            WidgetStateProperty.all(AppColors.white),
+                      ),
+                    ),
+                    SizedBox(width: AppDimens.m),
+                    ElevatedButton.icon(
+                      onPressed: () {},
+                      label: Text(
+                        context.l10n.lblOrderAddNote,
+                        style: TextStyle(
+                          color: AppColors.black,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 16,
                         ),
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                      icon:
+                          SvgPicture.asset(AppAssets.images.addnote, width: 15),
+                      style: ButtonStyle(
+                        elevation: WidgetStateProperty.all(0),
+                        backgroundColor:
+                            WidgetStateProperty.all(AppColors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             AppTheme.customDivider,
             // Products Section
@@ -180,18 +184,18 @@ class _OrderDetailPageState
                 Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: AppColors.darkGrey),
+                    border: Border.all(color: AppColors.semiGrey),
                   ),
                   child: CircleAvatar(
-                    backgroundColor: AppColors.semiGrey,
-                    radius: 18,
+                    backgroundColor: AppColors.white,
+                    radius: 15,
                     child: IconButton(
                       onPressed: viewModel.orderCount != 1
                           ? () => viewModel.setOrderCount = false
                           : null,
                       icon: Icon(Icons.remove),
                       padding: EdgeInsets.zero,
-                      iconSize: 26,
+                      iconSize: 20,
                       color: AppColors.black,
                     ),
                   ),
@@ -206,16 +210,16 @@ class _OrderDetailPageState
                 Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: AppColors.darkGrey),
+                    border: Border.all(color: AppColors.semiGrey),
                   ),
                   child: CircleAvatar(
-                    backgroundColor: AppColors.semiGrey,
-                    radius: 18,
+                    backgroundColor: AppColors.white,
+                    radius: 15,
                     child: IconButton(
                       onPressed: () => viewModel.setOrderCount = true,
                       icon: Icon(Icons.add),
                       padding: EdgeInsets.zero,
-                      iconSize: 26,
+                      iconSize: 20,
                       color: AppColors.black,
                     ),
                   ),
@@ -295,6 +299,7 @@ class _OrderDetailPageState
                           decoration: TextDecoration.lineThrough,
                         ),
                       ),
+                      SizedBox(width: AppDimens.s),
                       Text(
                         1.currencyFormat(),
                         style: TextStyle(
@@ -366,7 +371,6 @@ class _OrderDetailPageState
                     height: 25,
                     child: IconButton(
                       onPressed: () {},
-                      color: AppColors.primarySwatch,
                       style: ButtonStyle(
                         padding: WidgetStateProperty.all(EdgeInsets.zero),
                         backgroundColor:
@@ -387,16 +391,8 @@ class _OrderDetailPageState
               height: size.height * .06,
               child: ElevatedButton(
                 onPressed: () {},
-                style: ButtonStyle(
-                  shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        AppDimens.m,
-                      ),
-                    ),
-                  ),
-                ),
-                child: Text("Order"),
+                style: AppTheme.elevatedButtonStyle,
+                child: Text("Order", style: TextStyle(fontSize: 20)),
               ),
             ),
           ],

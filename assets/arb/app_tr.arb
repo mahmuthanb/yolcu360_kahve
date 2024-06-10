@@ -20,6 +20,10 @@
   "lblOrderPaymentSummary":"Sipariş Özeti",
   "lblOrderPaymentDeliveryFee":"Teslimat Bedeli",
   "lblOrderPaymentDiscount":"{count} adet İndirim uygulandı",
+  "lblOrderEditAddress":"Adresi Düzenle",
+  "lblOrderAddNote":"Not Ekle",
+  "lblHomeLocation":"Konum",
+  "lblHomeSearchBox":"Kahve ara",
   "ttlOrderPage":"Sipariş",
   "ttlDetailPage":"Detay"
 }

@@ -69,6 +69,18 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get lblOrderEditAddress => 'Edit Address';
+
+  @override
+  String get lblOrderAddNote => 'Add Note';
+
+  @override
+  String get lblHomeLocation => 'Location';
+
+  @override
+  String get lblHomeSearchBox => 'Search coffee';
+
+  @override
   String get ttlOrderPage => 'Order';
 
   @override
