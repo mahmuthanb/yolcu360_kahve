@@ -9,8 +9,8 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     await setupDI(i.Environment.test);
   });
-  group('Test start', () {
-    test('value should be greater than or equal to 1', () async {
+  group('Fetch Coffee List', () {
+    test('Coffelist should be greater than or equal to 1', () async {
       var appRepository = getIt<AppRepository>();
       List<CoffeeModel> coffeeList = [];
       coffeeList = await appRepository.getCoffeeList();
