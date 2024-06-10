@@ -8,7 +8,7 @@ import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/page/home/home_vm.dart';
 import 'package:yolcu360_kahve/feature/page/home/search/search_delegate.dart';
-import 'package:yolcu360_kahve/feature/page/home/widgets/cofee_type_button.dart';
+import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_type_button.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_card.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_placeholders.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/slider_text.dart';
