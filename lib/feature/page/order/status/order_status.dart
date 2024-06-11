@@ -261,7 +261,11 @@ class _OrderStatusPageState
                               const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Johan Hawn"),
+                                  Text(
+                                    "Johan Hawn",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
                                   Text("Personal Courier"),
                                 ],
                               ),
