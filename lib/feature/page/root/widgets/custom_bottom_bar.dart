@@ -7,11 +7,12 @@ class CustomBottomBar extends StatelessWidget {
   final Function(int) onTap;
   final List<Widget> items;
 
-  const CustomBottomBar(
-      {super.key,
-      required this.pageIndex,
-      required this.onTap,
-      required this.items});
+  const CustomBottomBar({
+    super.key,
+    required this.pageIndex,
+    required this.onTap,
+    required this.items,
+  });
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -61,19 +62,6 @@ class CustomBottomBar extends StatelessWidget {
   }
 }
 
-// class NavItemModel {
-//   NavItemModel({
-//     required this.icon,
-//     required this.label,
-//     required this.route,
-//     required this.key,
-//   });
-//   final IconData icon;
-//   final String Function(BuildContext context) label;
-//   final String route;
-//   final GlobalKey<NavigatorState> key;
-// }
-
 Widget navItem(IconData icon, bool selected, {Function()? onTap}) {
   return Expanded(
     child: InkWell(
@@ -86,14 +74,3 @@ Widget navItem(IconData icon, bool selected, {Function()? onTap}) {
     ),
   );
 }
-
-        //       .map((e) => BottomNavigationBarItem(
-        //             icon: Icon(
-        //               e.icon,
-        //               color: _items.indexOf(e) == currentIndex
-        //                   ? AppColors.primarySwatch
-        //                   : AppColors.darkGrey,
-        //             ),
-        //             label: e.label(context),
-        //           ))
-        //       .toList(),

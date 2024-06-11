@@ -191,7 +191,6 @@ class _OrderStatusPageState
                             vertical: AppDimens.s,
                           ),
                           decoration: BoxDecoration(
-                              // color: AppColors.darkGrey,
                               borderRadius: BorderRadius.circular(
                                 AppDimens.m,
                               ),
@@ -264,7 +263,6 @@ class _OrderStatusPageState
                               const Spacer(),
                               Container(
                                 decoration: BoxDecoration(
-                                  // color: AppColors.darkGrey,
                                   border: Border.all(
                                     color: AppColors.semiGrey,
                                     width: 2,

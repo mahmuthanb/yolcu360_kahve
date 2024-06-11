@@ -33,7 +33,6 @@ class _LoginPageState extends BaseState<LoginViewModel, LoginPage> {
         ),
         Column(
           children: [
-            // const Spacer(),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.symmetric(
@@ -64,14 +63,6 @@ class _LoginPageState extends BaseState<LoginViewModel, LoginPage> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    // ElevatedButton.icon(
-                    //   onPressed: () {},
-                    //   icon: AppAssets.images.googleIcon.image(width: 30),
-                    //   label: const Text(
-                    //     'Continue with Google',
-                    //     style: TextStyle(fontSize: 24),
-                    //   ),
-                    // ),
                     viewModel.isLoading
                         ? const SocialLoginLoading()
                         : SocialLoginButton(

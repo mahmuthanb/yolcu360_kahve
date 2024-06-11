@@ -14,7 +14,6 @@ class ProductDetailViewModel extends BaseViewModel {
         favList.split(",").where((s) => s.isNotEmpty).toList();
     if (!isFavorited) {
       newList.add(id.toString());
-      // lastFavList = favList + '$id,';
     } else {
       newList.remove(id.toString());
     }

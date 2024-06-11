@@ -106,7 +106,6 @@ class CoffeeCardPlaceHolder extends StatelessWidget {
                         width: 25,
                         height: 25,
                       ),
-                      // const SquareButton()
                     ],
                   )
                 ],

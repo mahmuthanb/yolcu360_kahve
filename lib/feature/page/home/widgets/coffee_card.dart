@@ -77,7 +77,6 @@ class CoffeCard extends StatelessWidget {
                             size: 35,
                           ),
                         ),
-                        // const SquareButton()
                       ],
                     )
                   ],

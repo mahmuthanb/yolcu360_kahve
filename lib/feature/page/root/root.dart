@@ -61,7 +61,8 @@ class _RootPageState extends BaseState<RootViewModel, RootPage> {
   Widget build(BuildContext context) => Container(
         color: AppColors.primarySwatch,
         child: Scaffold(
-          body: content, resizeToAvoidBottomInset: false,
+          body: content,
+          resizeToAvoidBottomInset: false,
           bottomNavigationBar: CustomBottomBar(
             pageIndex: currentIndex,
             onTap: (p0) {
@@ -78,24 +79,6 @@ class _RootPageState extends BaseState<RootViewModel, RootPage> {
                 )
                 .toList(),
           ),
-          // bottomNavigationBar: BottomNavigationBar(
-          //   currentIndex: currentIndex,
-          //   onTap: (i) {
-          //     currentIndex = i;
-          //     setState(() {});
-          //   },
-          //   items: _items
-          //       .map((e) => BottomNavigationBarItem(
-          //             icon: Icon(
-          //               e.icon,
-          //               color: _items.indexOf(e) == currentIndex
-          //                   ? AppColors.primarySwatch
-          //                   : AppColors.darkGrey,
-          //             ),
-          //             label: e.label(context),
-          //           ))
-          //       .toList(),
-          // ),
         ),
       );
 }
