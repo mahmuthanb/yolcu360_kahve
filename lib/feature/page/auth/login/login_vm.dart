@@ -12,10 +12,13 @@ class LoginViewModel extends BaseViewModel {
   bool get isLoading => _isLoading;
   set setIsLoading(bool loading) {
     _isLoading = loading;
+    notifyListeners();
   }
 
-  verifyLogin(bool status) {
+  verifyLogin(bool status) async {
     setIsLoading = true;
+    await Future.delayed(const Duration(seconds: 2));
     _localDataSource.setLogged(status);
+    setIsLoading = false;
   }
 }

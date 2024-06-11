@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
 
@@ -35,10 +36,41 @@ class SocialLoginButton extends StatelessWidget {
                 style: const TextStyle(
                   color: AppColors.darkGrey,
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SocialLoginLoading extends StatelessWidget {
+  const SocialLoginLoading({
+    super.key,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer.fromColors(
+      baseColor: AppColors.darkGrey,
+      highlightColor: AppColors.black,
+      child: Container(
+        width: double.infinity,
+        margin: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.all(16.0),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(AppDimens.m),
+        ),
+        child: const Text(
+          "Loading",
+          style: TextStyle(
+            color: AppColors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

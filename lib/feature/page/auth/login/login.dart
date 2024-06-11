@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:yolcu360_kahve/core/res/assets.gen.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
@@ -46,20 +45,20 @@ class _LoginPageState extends BaseState<LoginViewModel, LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Text(
+                    const Text(
                       'Coffee so good, your taste buds will love it.',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.sora(
+                      style: TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
                         color: AppColors.white,
                       ),
                     ),
                     const SizedBox(height: 20),
-                    Text(
+                    const Text(
                       'The best grain, the finest roast, the powerful flavor.',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.sora(
+                      style: TextStyle(
                         fontSize: 18,
                         color: AppColors.grey,
                       ),
@@ -73,14 +72,17 @@ class _LoginPageState extends BaseState<LoginViewModel, LoginPage> {
                     //     style: TextStyle(fontSize: 24),
                     //   ),
                     // ),
-                    SocialLoginButton(
-                      AppAssets.images.googleIcon.image(width: 30),
-                      'Continue with Google',
-                      onTap: () {
-                        viewModel.verifyLogin(true);
-                        HomeRoute().pushAndRemoveUntil(context, (p0) => true);
-                      },
-                    )
+                    viewModel.isLoading
+                        ? const SocialLoginLoading()
+                        : SocialLoginButton(
+                            AppAssets.images.googleIcon.image(width: 30),
+                            'Continue with Google',
+                            onTap: () async {
+                              await viewModel.verifyLogin(true);
+                              HomeRoute()
+                                  .pushAndRemoveUntil(context, (p0) => true);
+                            },
+                          )
                   ],
                 ),
               ),
