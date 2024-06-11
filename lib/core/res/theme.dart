@@ -1,4 +1,3 @@
-import 'package:google_fonts/google_fonts.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
 import 'package:yolcu360_kahve/core/res/icons.dart';
@@ -26,7 +25,6 @@ class AppTheme {
     return ThemeData(
         useMaterial3: true,
         colorScheme: colorScheme,
-        // change to AppColors.grey
         scaffoldBackgroundColor: AppColors.grey,
         appBarTheme: const AppBarTheme(
           centerTitle: true,
@@ -43,7 +41,7 @@ class AppTheme {
         textTheme: const TextTheme(
           titleLarge: TextStyle(fontWeight: FontWeight.w700),
         ),
-        fontFamily: GoogleFonts.sora().fontFamily,
+        fontFamily: 'Sora',
         listTileTheme: ListTileThemeData(
           iconColor: colorScheme.onSurface.withOpacity(
             0.5,
