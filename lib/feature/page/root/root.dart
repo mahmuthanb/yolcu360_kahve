@@ -31,19 +31,19 @@ class _RootPageState extends BaseState<RootViewModel, RootPage> {
     NavItemModel(
       icon: Icons.favorite,
       label: (c) => c.l10n.settings,
-      route: RouteMaps.settingsRoute,
+      route: RouteMaps.notFoundRoute,
       key: GlobalKey<NavigatorState>(),
     ),
     NavItemModel(
       icon: Icons.shopping_bag,
       label: (c) => c.l10n.settings,
-      route: RouteMaps.settingsRoute,
+      route: RouteMaps.notFoundRoute,
       key: GlobalKey<NavigatorState>(),
     ),
     NavItemModel(
       icon: Icons.notifications,
       label: (c) => c.l10n.settings,
-      route: RouteMaps.settingsRoute,
+      route: RouteMaps.notFoundRoute,
       key: GlobalKey<NavigatorState>(),
     ),
   ];
@@ -64,8 +64,8 @@ class _RootPageState extends BaseState<RootViewModel, RootPage> {
           onGenerateRoute: onGenerateRoute));
   @override
   Widget build(BuildContext context) => Container(
-        color: AppColors.primarySwatch,
-        child: Scaffold(
+      color: AppColors.primarySwatch,
+      child: Scaffold(
           body: content,
           resizeToAvoidBottomInset: false,
           bottomNavigationBar: CustomBottomBar(
@@ -83,9 +83,7 @@ class _RootPageState extends BaseState<RootViewModel, RootPage> {
                   ),
                 )
                 .toList(),
-          ),
-        ),
-      );
+          )));
 }
 
 class NavItemModel {

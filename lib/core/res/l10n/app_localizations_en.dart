@@ -81,6 +81,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lblHomeSearchBox => 'Search coffee';
 
   @override
+  String get lblNotFoundPage => 'The page you are looking for can not be found or might be deleted';
+
+  @override
+  String get ttlNotFoundPage => 'Page Not Found';
+
+  @override
   String get ttlOrderPage => 'Order';
 
   @override

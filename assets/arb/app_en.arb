@@ -24,6 +24,8 @@
   "lblOrderAddNote":"Add Note",
   "lblHomeLocation":"Location",
   "lblHomeSearchBox":"Search coffee",
+  "lblNotFoundPage":"The page you are looking for can not be found or might be deleted",
+  "ttlNotFoundPage":"Page Not Found",
   "ttlOrderPage":"Order",
   "ttlDetailPage":"Detail"
 }

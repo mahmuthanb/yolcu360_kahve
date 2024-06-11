@@ -237,6 +237,18 @@ abstract class AppLocalizations {
   /// **'Search coffee'**
   String get lblHomeSearchBox;
 
+  /// No description provided for @lblNotFoundPage.
+  ///
+  /// In en, this message translates to:
+  /// **'The page you are looking for can not be found or might be deleted'**
+  String get lblNotFoundPage;
+
+  /// No description provided for @ttlNotFoundPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Page Not Found'**
+  String get ttlNotFoundPage;
+
   /// No description provided for @ttlOrderPage.
   ///
   /// In en, this message translates to:

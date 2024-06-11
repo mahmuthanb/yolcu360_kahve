@@ -81,6 +81,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get lblHomeSearchBox => 'Kahve ara';
 
   @override
+  String get lblNotFoundPage => 'Aradığınız sayfa bulunamadı ya da silinmiş olabilir';
+
+  @override
+  String get ttlNotFoundPage => 'Sayfa Bulunamadı';
+
+  @override
   String get ttlOrderPage => 'Sipariş';
 
   @override

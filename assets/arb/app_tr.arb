@@ -24,6 +24,8 @@
   "lblOrderAddNote":"Not Ekle",
   "lblHomeLocation":"Konum",
   "lblHomeSearchBox":"Kahve ara",
+  "lblNotFoundPage":"Aradığınız sayfa bulunamadı ya da silinmiş olabilir",
+  "ttlNotFoundPage":"Sayfa Bulunamadı",
   "ttlOrderPage":"Sipariş",
   "ttlDetailPage":"Detay"
 }
