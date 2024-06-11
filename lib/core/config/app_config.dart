@@ -7,8 +7,6 @@ abstract class AppConfig {
   Map<String, dynamic> get mapQuery;
 }
 
-@Environment(Environment.prod)
-@Environment(Environment.dev)
 @Singleton(as: AppConfig)
 class AppConfigProdImpl implements AppConfig {
   @override

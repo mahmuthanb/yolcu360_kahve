@@ -12,6 +12,7 @@ import 'package:yolcu360_kahve/core/interceptor/error_interceptor.dart';
 import 'package:yolcu360_kahve/core/interceptor/log_interceptor.dart';
 import 'package:yolcu360_kahve/feature/data/service/app_service.dart';
 import 'package:yolcu360_kahve/feature/data/service/mock_app_service.dart';
+import 'package:yolcu360_kahve/feature/data/service/mock_map_service.dart';
 
 @module
 abstract class ApiModule {
@@ -41,6 +42,7 @@ abstract class ApiModule {
   @lazySingleton
   AppService get appService => AppService(injectRetrofitAPI);
 
+  @Environment(Environment.prod)
   @lazySingleton
   MapService get mapService {
     Dio dio2 = Dio(
@@ -68,4 +70,9 @@ abstract class ApiModule {
   @Environment(Environment.test)
   @lazySingleton
   AppService get appServiceMock => MockAppService();
+
+  @Environment(Environment.test)
+  @Environment(Environment.dev)
+  @lazySingleton
+  MapService get mapServiceMock => MockMapService();
 }
