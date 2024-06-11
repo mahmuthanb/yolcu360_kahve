@@ -69,57 +69,6 @@ class _SettingsPageState extends BaseState<SettingsViewModel, SettingsPage> {
               trailing: const Icon(AppIcons.chevronRight),
             ),
             const Divider(),
-            Consumer(
-                viewModel: getIt<AppViewModel>(),
-                builder: (context, vm) {
-                  return ListTile(
-                    title: Text(context.l10n.appearance),
-                    onTap: () {
-                      showModalBottomSheet(
-                          context: context,
-                          showDragHandle: true,
-                          useRootNavigator: true,
-                          builder: (c) => SingleChildScrollView(
-                                child: SafeArea(
-                                  child: Column(
-                                    children: [
-                                      RadioListTile<ThemeMode>(
-                                        value: ThemeMode.light,
-                                        groupValue: vm.appearance,
-                                        onChanged: (v) {
-                                          vm.setDarkMode(ThemeMode.light);
-                                          Navigator.pop(c);
-                                        },
-                                        title: Text(context.l10n.light),
-                                      ),
-                                      RadioListTile(
-                                        value: ThemeMode.dark,
-                                        groupValue: vm.appearance,
-                                        onChanged: (v) {
-                                          vm.setDarkMode(ThemeMode.dark);
-                                          Navigator.pop(c);
-                                        },
-                                        title: Text(context.l10n.dark),
-                                      ),
-                                      RadioListTile(
-                                        value: ThemeMode.system,
-                                        groupValue: vm.appearance,
-                                        onChanged: (v) {
-                                          vm.setDarkMode(ThemeMode.system);
-                                          Navigator.pop(c);
-                                        },
-                                        title: Text(context.l10n.systemDefault),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ));
-                    },
-                    leading: const Icon(AppIcons.lightMode),
-                    trailing: const Icon(AppIcons.chevronRight),
-                  );
-                }),
-            const Divider(),
             ListTile(
               title: Text(context.l10n.version),
               leading: const Icon(AppIcons.version),
@@ -136,7 +85,7 @@ class _SettingsPageState extends BaseState<SettingsViewModel, SettingsPage> {
                     useRootNavigator: true,
                     applicationName: viewModel.appName,
                     applicationVersion: viewModel.appVersion,
-                    applicationLegalese: "emintolgahanpolat");
+                    applicationLegalese: "@mahmuthanb");
               },
             )
           ],
