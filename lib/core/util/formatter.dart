@@ -1,4 +1,5 @@
 import 'package:intl/intl.dart';
+import 'package:latlong2/latlong.dart';
 
 extension DateTimeEx on DateTime {
   String dateFormat() {
@@ -24,4 +25,8 @@ extension ListStringFormatter on List<String> {
   String convertListtoString() {
     return join(', ');
   }
+}
+
+extension LatLngExt on LatLng {
+  String stringify() => '$longitude,$latitude';
 }
