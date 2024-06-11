@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
 import 'package:route_map/route_map.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:yolcu360_kahve/core/res/colors.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
@@ -10,9 +15,9 @@ import 'package:yolcu360_kahve/core/res/theme.dart';
 import 'package:yolcu360_kahve/core/util/image_network.dart';
 import 'package:yolcu360_kahve/feature/page/home/home_vm.dart';
 import 'package:yolcu360_kahve/feature/page/home/search/search_delegate.dart';
-import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_type_button.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_card.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_placeholders.dart';
+import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_type_button.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/slider_text.dart';
 
 @RouteMap(name: "home")

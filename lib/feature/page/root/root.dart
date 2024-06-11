@@ -1,3 +1,10 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:route_map/route_map.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
@@ -5,8 +12,6 @@ import 'package:yolcu360_kahve/feature/page/root/root_vm.dart';
 import 'package:yolcu360_kahve/feature/page/root/widgets/custom_bottom_bar.dart';
 import 'package:yolcu360_kahve/feature/router/app_router.dart';
 import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
-import 'package:flutter/material.dart';
-import 'package:route_map/route_map.dart';
 
 @RouteMap(name: "/")
 class RootPage extends StatefulWidget {

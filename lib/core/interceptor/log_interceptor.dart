@@ -1,7 +1,10 @@
-// Package imports:
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:dio/dio.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/core/logger.dart';
 
 class LoggerInterceptor extends Interceptor {

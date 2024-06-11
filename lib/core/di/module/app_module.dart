@@ -1,8 +1,11 @@
-import 'package:injectable/injectable.dart';
-import 'package:yolcu360_kahve/core/source/app_storage.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+// Package imports:
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:injectable/injectable.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/source/app_storage.dart';
 
 @module
 abstract class AppModule {

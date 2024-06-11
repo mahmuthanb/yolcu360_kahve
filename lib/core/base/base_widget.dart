@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/core/base/base_view_model.dart';
 import 'package:yolcu360_kahve/core/di/locator.dart';
 

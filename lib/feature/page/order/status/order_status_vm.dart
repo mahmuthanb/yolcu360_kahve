@@ -1,9 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:latlong2/latlong.dart';
-import 'package:yolcu360_kahve/core/base/base_view_model.dart';
 import 'package:injectable/injectable.dart';
+import 'package:latlong2/latlong.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/base/base_view_model.dart';
 import 'package:yolcu360_kahve/core/res/assets.gen.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/util/formatter.dart';

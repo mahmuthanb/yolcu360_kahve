@@ -1,7 +1,9 @@
-import 'package:yolcu360_kahve/core/source/local_data_source.dart';
-
-import 'package:yolcu360_kahve/core/base/base_view_model.dart';
+// Package imports:
 import 'package:injectable/injectable.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/base/base_view_model.dart';
+import 'package:yolcu360_kahve/core/source/local_data_source.dart';
 
 @injectable
 class ProductDetailViewModel extends BaseViewModel {

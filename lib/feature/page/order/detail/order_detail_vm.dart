@@ -1,6 +1,9 @@
-import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
-import 'package:yolcu360_kahve/core/base/base_view_model.dart';
+// Package imports:
 import 'package:injectable/injectable.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/base/base_view_model.dart';
+import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
 
 @injectable
 class OrderDetailViewModel extends BaseViewModel {

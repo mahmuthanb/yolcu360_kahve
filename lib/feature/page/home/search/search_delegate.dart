@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
 import 'package:yolcu360_kahve/feature/page/home/widgets/coffee_card_horizontal.dart';
 

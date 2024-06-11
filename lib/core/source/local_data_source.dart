@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:yolcu360_kahve/core/source/app_storage.dart';
+
+// Package imports:
 import 'package:injectable/injectable.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/source/app_storage.dart';
 
 abstract class LocalDataSource {
   Locale get locale;

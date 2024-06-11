@@ -1,10 +1,14 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:yolcu360_kahve/core/di/locator.dart';
-import 'package:yolcu360_kahve/core/logger.dart';
+// Flutter imports:
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/di/locator.dart';
+import 'package:yolcu360_kahve/core/logger.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder, String env) async {
   await runZonedGuarded(() async {

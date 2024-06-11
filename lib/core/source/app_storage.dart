@@ -1,5 +1,8 @@
-import 'package:yolcu360_kahve/core/encrypt/aes_encrypt.dart';
+// Package imports:
 import 'package:shared_preferences/shared_preferences.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/encrypt/aes_encrypt.dart';
 
 class AppStorage {
   AppStorage(this._storage);

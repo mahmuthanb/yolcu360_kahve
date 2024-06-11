@@ -1,12 +1,17 @@
-import 'package:dio/dio.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
+
+// Package imports:
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/config/app_config.dart';
+import 'package:yolcu360_kahve/core/di/locator.dart';
 import 'package:yolcu360_kahve/core/interceptor/error_interceptor.dart';
 import 'package:yolcu360_kahve/core/interceptor/log_interceptor.dart';
 import 'package:yolcu360_kahve/feature/data/service/app_service.dart';
 import 'package:yolcu360_kahve/feature/data/service/mock_app_service.dart';
-import 'package:yolcu360_kahve/core/config/app_config.dart';
-import 'package:yolcu360_kahve/core/di/locator.dart';
 
 @module
 abstract class ApiModule {

@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/widgets.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/core/res/l10n/app_localizations.dart';
 
 extension AppLocalizationsX on BuildContext {

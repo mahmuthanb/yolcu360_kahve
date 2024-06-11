@@ -1,11 +1,16 @@
-import 'package:yolcu360_kahve/core/base/base_view_model.dart';
-import 'package:yolcu360_kahve/core/source/local_data_source.dart';
-import 'package:yolcu360_kahve/core/siren/siren.dart';
-import 'package:yolcu360_kahve/feature/data/repository/app_repository.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:injectable/injectable.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/base/base_view_model.dart';
+import 'package:yolcu360_kahve/core/siren/siren.dart';
+import 'package:yolcu360_kahve/core/source/local_data_source.dart';
+import 'package:yolcu360_kahve/feature/data/repository/app_repository.dart';
 
 @singleton
 class AppViewModel extends BaseViewModel {

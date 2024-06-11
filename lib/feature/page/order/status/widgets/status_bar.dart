@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/core/res/dimens.dart';
 
 class StatusBarWidget extends StatelessWidget {

@@ -1,4 +1,6 @@
+// Package imports:
 import 'package:json_annotation/json_annotation.dart';
+
 part 'driving_route_model.g.dart';
 
 @JsonSerializable()

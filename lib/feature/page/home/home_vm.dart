@@ -1,7 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:yolcu360_kahve/core/base/base_view_model.dart';
+
+// Package imports:
 import 'package:injectable/injectable.dart';
+
+// Project imports:
+import 'package:yolcu360_kahve/core/base/base_view_model.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
 import 'package:yolcu360_kahve/core/util/alert_message.dart';

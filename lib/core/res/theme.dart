@@ -1,7 +1,10 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/dimens.dart';
 import 'package:yolcu360_kahve/core/res/icons.dart';
-import 'package:flutter/material.dart';
 
 class LightTheme extends AppTheme {
   @override

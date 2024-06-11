@@ -1,6 +1,9 @@
+// Package imports:
+import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:dio/dio.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/feature/data/model/coffee_model.dart';
 import 'package:yolcu360_kahve/feature/data/model/driving_route_model.dart';
 

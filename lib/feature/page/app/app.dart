@@ -1,14 +1,21 @@
+// Dart imports:
 import 'dart:io';
+
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:url_launcher/url_launcher.dart';
+
+// Project imports:
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
-import 'package:yolcu360_kahve/core/res/theme.dart';
 import 'package:yolcu360_kahve/core/res/l10n/app_localizations.dart';
-import 'package:yolcu360_kahve/feature/page/no_connectivity/no_connectivity.dart';
+import 'package:yolcu360_kahve/core/res/theme.dart';
+import 'package:yolcu360_kahve/core/siren/siren.dart';
 import 'package:yolcu360_kahve/feature/page/app/app_vm.dart';
+import 'package:yolcu360_kahve/feature/page/no_connectivity/no_connectivity.dart';
 import 'package:yolcu360_kahve/feature/router/app_router.dart';
 import 'package:yolcu360_kahve/feature/router/app_router.routes.dart';
-import 'package:yolcu360_kahve/core/siren/siren.dart';
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
