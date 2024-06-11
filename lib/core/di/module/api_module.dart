@@ -36,6 +36,29 @@ abstract class ApiModule {
   @lazySingleton
   AppService get appService => AppService(injectRetrofitAPI);
 
+  @lazySingleton
+  MapService get mapService {
+    Dio dio2 = Dio(
+      BaseOptions(
+        baseUrl: getIt<AppConfig>().mapBase,
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "accept": "*/*",
+        },
+        queryParameters: getIt<AppConfig>().mapQuery,
+        connectTimeout: const Duration(minutes: 1),
+        receiveTimeout: const Duration(minutes: 1),
+        sendTimeout: const Duration(minutes: 1),
+      ),
+    );
+    dio2.interceptors.add(ErrorInterceptor());
+    if (kDebugMode) {
+      dio2.interceptors.add(LoggerInterceptor());
+    }
+    return MapService(dio2);
+  }
+
   @Environment(Environment.dev)
   @Environment(Environment.test)
   @lazySingleton
