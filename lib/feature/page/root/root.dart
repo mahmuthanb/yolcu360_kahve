@@ -8,6 +8,7 @@ import 'package:route_map/route_map.dart';
 import 'package:yolcu360_kahve/core/base/base_widget.dart';
 import 'package:yolcu360_kahve/core/res/colors.gen.dart';
 import 'package:yolcu360_kahve/core/res/l10n/l10n.dart';
+import 'package:yolcu360_kahve/feature/page/not_found/not_found.dart';
 import 'package:yolcu360_kahve/feature/page/root/root_vm.dart';
 import 'package:yolcu360_kahve/feature/page/root/widgets/custom_bottom_bar.dart';
 import 'package:yolcu360_kahve/feature/router/app_router.dart';
@@ -54,13 +55,8 @@ class _RootPageState extends BaseState<RootViewModel, RootPage> {
       tabBuilder: (c, index) => Navigator(
           key: _items[index].key,
           initialRoute: _items[index].route,
-          onUnknownRoute: (settings) => MaterialPageRoute(
-                builder: (_) => Scaffold(
-                  appBar: AppBar(
-                    title: const Text('unknown'),
-                  ),
-                ),
-              ),
+          onUnknownRoute: (settings) =>
+              MaterialPageRoute(builder: (_) => const NotFoundPage()),
           onGenerateRoute: onGenerateRoute));
   @override
   Widget build(BuildContext context) => Container(
