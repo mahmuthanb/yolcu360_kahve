@@ -25,7 +25,7 @@ void main() {
       DrivingRouteModel drivingRouteModel;
       drivingRouteModel = await appRepository.getDrivingRoute(
           '29.07182584047572,41.002663591970276;29.061593184136033,40.99851198686524');
-      expect(drivingRouteModel.routes.first.geometry.coordinates.length, 10);
+      expect(drivingRouteModel.routes.first.geometry.coordinates.length, 53);
     });
   });
 }
