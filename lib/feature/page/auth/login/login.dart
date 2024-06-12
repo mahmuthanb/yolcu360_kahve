@@ -75,7 +75,7 @@ class _LoginPageState extends BaseState<LoginViewModel, LoginPage> {
                             'Continue with Google',
                             onTap: () async {
                               await viewModel.verifyLogin(true);
-                              HomeRoute()
+                              RootRoute()
                                   .pushAndRemoveUntil(context, (p0) => true);
                             },
                           )
