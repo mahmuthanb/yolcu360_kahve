@@ -16,6 +16,8 @@ import 'package:yolcu360_kahve/feature/data/service/mock_map_service.dart';
 
 @module
 abstract class ApiModule {
+  @Environment(Environment.prod)
+  @Environment(Environment.dev)
   @LazySingleton(order: -998)
   Dio get injectRetrofitAPI {
     Dio dio = Dio(
