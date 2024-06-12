@@ -71,17 +71,9 @@ class _OrderDetailPageState
                   });
                 },
                 isSelected: viewModel.isSelected,
-                children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Text(
-                      'Deliver',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ),
-                  const Text('Pick Up', style: TextStyle(fontSize: 16))
+                children: const <Widget>[
+                  Text('Deliver', style: TextStyle(fontSize: 16)),
+                  Text('Pick Up', style: TextStyle(fontSize: 16))
                 ],
               ),
             ),
