@@ -8,13 +8,11 @@ import 'package:yolcu360_kahve/core/res/dimens.dart';
 class CustomBottomBar extends StatelessWidget {
   final int pageIndex;
   final Function(int) onTap;
-  final List<Widget> items;
 
   const CustomBottomBar({
     super.key,
     required this.pageIndex,
     required this.onTap,
-    required this.items,
   });
   @override
   Widget build(BuildContext context) {
@@ -54,7 +52,7 @@ class CustomBottomBar extends StatelessWidget {
               onTap: () => onTap(2),
             ),
             navItem(
-              Icons.notifications,
+              Icons.settings,
               pageIndex == 3,
               onTap: () => onTap(3),
             ),

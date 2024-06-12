@@ -42,9 +42,9 @@ class _RootPageState extends BaseState<RootViewModel, RootPage> {
       key: GlobalKey<NavigatorState>(),
     ),
     NavItemModel(
-      icon: Icons.notifications,
+      icon: Icons.settings,
       label: (c) => c.l10n.settings,
-      route: RouteMaps.notFoundRoute,
+      route: RouteMaps.settingsRoute,
       key: GlobalKey<NavigatorState>(),
     ),
   ];
@@ -70,15 +70,6 @@ class _RootPageState extends BaseState<RootViewModel, RootPage> {
               currentIndex = p0;
               setState(() {});
             },
-            items: _items
-                .map(
-                  (e) => navItem(
-                    e.icon,
-                    _items.indexOf(e) == currentIndex,
-                    onTap: () => _items.indexOf(e),
-                  ),
-                )
-                .toList(),
           )));
 }
 
